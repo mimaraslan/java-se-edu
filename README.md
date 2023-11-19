@@ -1,2 +1,2 @@
-# java-se-edu
-Java eğitimi örnekleri
+# Java-SE-edu
+Java eğitimi örneklerimiz
