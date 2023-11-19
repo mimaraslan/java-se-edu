@@ -32,8 +32,8 @@ public class _003_StringMetodu {
     }
     public static void main(String[] args) {
 
-        String        firsName      =  new  String();
-        _003_StringMetodu obj       =  new  _003_StringMetodu();
+        String  firsName = new String();
+        _003_StringMetodu obj = new _003_StringMetodu();
 
 
         String adi = "Şadiye";
