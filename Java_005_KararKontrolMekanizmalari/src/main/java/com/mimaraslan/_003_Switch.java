@@ -39,16 +39,16 @@ public class _003_Switch {
                 System.out.println("Pts");
                 break;
             case 2:
-                System.out.println("S");
+                System.out.println("Sa");
                 break;
             case 3:
-                System.out.println("C");
+                System.out.println("Crş");
                 break;
             case 4:
-                System.out.println("P");
+                System.out.println("Per");
                 break;
             case 5:
-                System.out.println("C");
+                System.out.println("Cum");
                 break;
             case 6:
                 System.out.println("Ct");
@@ -59,8 +59,6 @@ public class _003_Switch {
             default:
                 System.out.println("Bulunamadı.");
                 break;
-
-
         }
 
 
@@ -69,7 +67,7 @@ public class _003_Switch {
         for (int i = 0; i < 10; i++) {
 
             if (i == 3) {
-                System.out.println("BULUNDU: " + i);
+                System.out.println("BULUNDU : " + i);
                 break;
                // continue;
             } else {
