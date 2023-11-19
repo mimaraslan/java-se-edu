@@ -7,10 +7,10 @@ public class _002_If_Else {
     public static void main(String[] args) {
         System.out.println("IF ELSE");
 
-        if (1<-50){
-            System.out.println("EVET");
+        if (11<50){
+            System.out.println("EVET UYGUNDUR.");
         }else {
-            System.out.println("HAYIR");
+            System.out.println("HAYIR OLMAZ!");
         }
 
 
