@@ -16,7 +16,7 @@ public class _001_If {
         }
 
         int a = 1, b = 2, c = 3;
-        int x, y, z = 100;
+        int x, y, z = 55;
         x = 90;
         y = 50;
 
