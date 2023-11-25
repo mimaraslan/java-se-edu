@@ -34,16 +34,19 @@ public class AppMain {
       //  System.out.println("TAHSİL: " +  mudur.getTahsilDurumu());
         mudur.mudurBilgisiniYaz(mudur);
 
+        System.out.println("---------------------------");
 
         Muhasebeci muhasebeci = new Muhasebeci();
-     //   muhasebeci.setUnvani("Mali Müşavir");
-    //    muhasebeci.setAdi("Şadiye");
+        muhasebeci.setAdi("Şadiye");
+        muhasebeci.setSoyadi("Özkan");
 
         System.out.println(muhasebeci);
         muhasebeci.bilgiPersonelYaz(muhasebeci);
 
+        muhasebeci.hesapla();
+        muhasebeci.hesapla(10);
+        muhasebeci.hesapla(10, 20);
 
-      //  System.out.println(mudur);
     }
 
 
