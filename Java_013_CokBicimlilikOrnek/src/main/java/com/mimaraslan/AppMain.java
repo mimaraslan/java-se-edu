@@ -28,7 +28,7 @@ public class AppMain {
 
        // Kedi kedi2 = (Kedi) new Hayvan();
 
-        Hayvan hayvan2 =  new Kus();
+        Hayvan hayvan2 = new Kus();
         hayvan2.sesVer();
         System.out.println("--------------");
 
