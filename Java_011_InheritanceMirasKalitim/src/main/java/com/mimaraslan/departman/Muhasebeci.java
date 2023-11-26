@@ -3,6 +3,7 @@ package com.mimaraslan.departman;
 import com.mimaraslan.base.Personel;
 import lombok.*;
 
+
 @Setter
 @Getter
 @NoArgsConstructor

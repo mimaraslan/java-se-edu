@@ -37,13 +37,10 @@ public class AppMain {
 
         Muhasebeci muhasebeci = new Muhasebeci();
         muhasebeci.setAdi("Şadiye");
-        muhasebeci.setUnvani("Mali Müşavir");
+        muhasebeci.setUnvani("Mali Musavir");
 
         System.out.println(muhasebeci);
         muhasebeci.bilgiPersonelYaz(muhasebeci);
-
-
-      //  System.out.println(mudur);
     }
 
 
