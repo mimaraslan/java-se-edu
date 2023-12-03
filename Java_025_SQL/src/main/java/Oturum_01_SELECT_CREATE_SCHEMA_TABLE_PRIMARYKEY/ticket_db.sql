@@ -3,10 +3,10 @@ CREATE SCHEMA `ticket_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
 
 -- TABLO OLUSTURULDU
 CREATE TABLE `ticket_db`.`musteriler` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `adi` VARCHAR(50) NULL,
-  `soyadi` VARCHAR(75) NULL,
-  PRIMARY KEY (`id`));
+                                          `id` INT NOT NULL AUTO_INCREMENT,
+                                          `adi` VARCHAR(50) NULL,
+                                          `soyadi` VARCHAR(75) NULL,
+                                          PRIMARY KEY (`id`));
 
 /*
 TABLO 
@@ -31,14 +31,14 @@ WHERE (`id` = '1');
 */
 
 
-ALTER TABLE `ticket_db`.`musteriler` 
-ADD COLUMN `bilet_no` VARCHAR(45) NULL AFTER `soyadi`;
+ALTER TABLE `ticket_db`.`musteriler`
+    ADD COLUMN `bilet_no` VARCHAR(45) NULL AFTER `soyadi`;
 
 SELECT * FROM ticket_db.musteriler;
 
 
-ALTER TABLE `ticket_db`.`musteriler` 
-ADD COLUMN `sehir` VARCHAR(55) NULL AFTER `bilet_no`;
+ALTER TABLE `ticket_db`.`musteriler`
+    ADD COLUMN `sehir` VARCHAR(55) NULL AFTER `bilet_no`;
 
 SELECT * FROM ticket_db.musteriler;
 
@@ -55,3 +55,35 @@ INSERT INTO `ticket_db`.`musteriler` (`adi`, `soyadi`, `bilet_no`, `sehir`) VALU
 INSERT INTO `ticket_db`.`musteriler` (`adi`, `soyadi`, `bilet_no`, `sehir`) VALUES ('Yalçın', 'Demir', '3200', 'Malatya');
 
 SELECT * FROM ticket_db.musteriler;
+
+
+
+SELECT * FROM ticket_db.musteriler;
+
+SELECT id, adi, soyadi FROM ticket_db.musteriler;
+
+SELECT adi, soyadi, id
+FROM ticket_db.musteriler;
+
+SELECT DISTINCT sehir FROM ticket_db.musteriler;
+
+SELECT * FROM ticket_db.musteriler WHERE sehir = "Adana";
+
+SELECT * FROM ticket_db.musteriler WHERE sehir = "Malatya";
+
+SELECT id, adi, sehir
+FROM ticket_db.musteriler
+WHERE sehir = "Ankara";
+
+SELECT * FROM ticket_db.musteriler WHERE sehir = "Eskişehir";
+
+
+select * from ticket_db.musteriler where sehir = 'Denizli';
+select id, adi, soyadi from  ticket_db.musteriler where sehir = 'İzmir';
+select bilet_no from ticket_db.musteriler where bilet_no>1500;
+select bilet_no, adi, soyadi, sehir from ticket_db.musteriler where bilet_no> 5;
+select bilet_no, adi, soyadi, sehir from ticket_db.musteriler where bilet_no> 5 and sehir = 'Denizli';
+select * from ticket_db.musteriler where not sehir = 'Denizli';
+select * from ticket_db.musteriler where sehir != 'Denizli';
+select * from ticket_db.musteriler where sehir IS null and adi IS null;
+
