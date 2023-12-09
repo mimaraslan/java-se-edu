@@ -1,3 +1,6 @@
+-- VERITABANI OLUSTURULDU
+CREATE SCHEMA `mydemodb` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+
 CREATE TABLE `mydemodb`.`customers` (
   `customer_id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NOT NULL,
@@ -5,8 +8,6 @@ CREATE TABLE `mydemodb`.`customers` (
   `phone` VARCHAR(35) NULL,
   `country` VARCHAR(50) NULL,
   PRIMARY KEY (`customer_id`));
-
-
 
 INSERT INTO `mydemodb`.`customers` (`first_name`, `last_name`, `phone`, `country`) VALUES ('Ali Yağız', 'Tar', '333', 'TR');
 INSERT INTO `mydemodb`.`customers` (`first_name`, `last_name`, `phone`, `country`) VALUES ('Mehmet Ali', 'Kaya', '333', 'CA');
@@ -25,3 +26,4 @@ INSERT INTO `mydemodb`.`customers` (`first_name`, `last_name`, `phone`, `country
 INSERT INTO `mydemodb`.`customers` (`first_name`, `last_name`, `phone`, `country`) VALUES ('Erdinç', 'Özdemir', '435', 'TR');
 
 
+SELECT * FROM mydemodb.customers;
