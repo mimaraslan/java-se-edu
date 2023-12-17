@@ -1,7 +1,4 @@
 package com.mimaraslan.select;
 
-public class MySqlConnection {
-
-
-
+public class B {
 }
