@@ -4,13 +4,16 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "CUSTOMERS")
-public class Customer {
+@Table(name = "WORKERS")
+public class Worker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CUSTOMER_ID")
+    @Column(name = "WORKER_ID")
     private int id;
+
+    @Column(name = "WORKER_NUMBER")
+    private int workerNumber;
 
     @Column(name = "FIRST_NAME", length = 60, nullable = false)
     private String firstName;
@@ -22,22 +25,20 @@ public class Customer {
     @Column(name = "CREATE_DATE")
     private Date createDate;
 
-    @Lob
-    @Column(name = "ADDRESS")
-    private String address;
+    @Embedded
+    private Address address;
 
 
-
-    public Customer() {
+    public Worker() {
     }
 
-    public Customer(int id, String firstName, String lastName) {
+    public Worker(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Customer(String firstName, String lastName) {
+    public Worker(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -72,5 +73,21 @@ public class Customer {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public int getWorkerNumber() {
+        return workerNumber;
+    }
+
+    public void setWorkerNumber(int workerNumber) {
+        this.workerNumber = workerNumber;
     }
 }

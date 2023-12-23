@@ -21,11 +21,20 @@ public class Customer {
     @Temporal(TemporalType.DATE)
     @Column(name = "CREATE_DATE")
     private Date createDate;
-
+/*
     @Lob
     @Column(name = "ADDRESS")
     private String address;
+*/
+    // Address sınıf
+ /*
+    private String sehir;
+    private String ilce;
+    private String mahalle;
+*/
 
+    @Embedded
+    private Address address;
 
 
     public Customer() {
@@ -72,5 +81,13 @@ public class Customer {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

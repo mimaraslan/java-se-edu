@@ -12,14 +12,14 @@ public class AppMain {
     public static void main(String[] args) {
 
         Customer customer = new Customer();
-        customer.setFirstName("Kadir");
-        customer.setLastName("Kılıç");
+        customer.setFirstName("A");
+        customer.setLastName("B");
         customer.setCreateDate(new Date());
 
-        Customer customer2 = new Customer("Filiz", "Helvacı");
+        Customer customer2 = new Customer("C", "D");
         customer2.setCreateDate(new Date());
 
-        Customer customer3 = new Customer("Ecem", "Koro");
+        Customer customer3 = new Customer("E", "F");
         customer3.setCreateDate(new Date());
 
         Session session = HibernateUtil.getSessionFactory().openSession();
