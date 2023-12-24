@@ -52,7 +52,7 @@ public class AppMain {
             }
 
             System.out.println("================== WHERE ==================");
-            Query query2 = session.createQuery("FROM Customer WHERE id=:id");
+            Query query2 = session.createQuery("FROM Customer WHERE customerId=:id");
             query2.setLong("id", 1);
 
             Customer cust2 = (Customer) query2.uniqueResult();
@@ -86,7 +86,7 @@ public class AppMain {
                     "SELECT c.firstname, c.lastname " +
                               "FROM Customer c " +
                               "INNER JOIN CustomerDetail d " +
-                              "ON c.id = d.id");
+                              "ON c.customerId = d.customerId");
 
             List<Objects> customerList6 = query6.list();
             for ( Customer  cust6  :  customerList  ) {
