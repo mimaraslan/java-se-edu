@@ -9,6 +9,8 @@ import com.mimaraslan.model.Buyer;
 import com.mimaraslan.model.Property;
 import com.mimaraslan.model.Seller;
 
+import java.math.BigDecimal;
+
 public class AppMain {
 
     public static void main(String[] args) {
@@ -65,14 +67,45 @@ public class AppMain {
 
 
         Property property = new Property();
+        property.setPropertyName("Nedim Bey Malikanesi");
         property.setTitle("Dublex");
-        property.setDescription("10 odalı 3 banyolu");
+        property.setDescription("Nezih bir ortam. Dileğinizin kabul olacağı ortam.");
         property.setType("Kiralık");
-
+        property.setBathroom(3);
+        property.setBedroom(15);
+        property.setPrice(BigDecimal.valueOf(10_000_000.75));
+        property.setArea(450.66F);
+        property.setLocation("Çengelköy");
         // ilişki
+        property.setAgent(agent);
+        property.setSeller(seller);
+        property.getBuyers().add(buyer);
+        property.getBuyers().add(buyer2);
 
         propertyDAO.saveOrUpdate(property);
 
+
+
+        Property property2 = new Property();
+        property2.setPropertyName("Doğan");
+        property2.setTitle("Hotel");
+        property2.setDescription("Turistik belde");
+        property2.setType("Satış");
+        property2.setBathroom(20);
+        property2.setBedroom(40);
+        property2.setPrice(BigDecimal.valueOf(200_000_000.55));
+        property2.setArea(650.22F);
+        property2.setLocation("Antalya");
+
+        // ilişkiler 1 - m
+        property2.setAgent(agent2);
+        property2.setSeller(seller2);
+
+        // ilişkiler m - m
+        property2.getBuyers().add(buyer);
+        property2.getBuyers().add(buyer2);
+
+        propertyDAO.saveOrUpdate(property2);
 
     }
 

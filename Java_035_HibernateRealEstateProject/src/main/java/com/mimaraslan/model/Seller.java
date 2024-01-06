@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -31,4 +33,11 @@ public class Seller {
 
     @Column(name = "PHONE")
     String phone;
+
+
+    //   1           m
+    // Seller     Property
+    @OneToMany (mappedBy = "seller", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Property> properties = new HashSet<>();
+
 }

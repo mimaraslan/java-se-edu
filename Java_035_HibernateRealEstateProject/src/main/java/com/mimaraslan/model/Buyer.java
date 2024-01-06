@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -31,5 +33,13 @@ public class Buyer {
 
     @Column(name = "PHONE")
     String phone;
+
+    // Bir gayrimenkulü birden fazla kişi satın alabilir mi?
+    //   m            m
+    // Buyer       Property
+    @ManyToMany(mappedBy = "buyers",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private Set<Property> properties = new HashSet<>();
 
 }

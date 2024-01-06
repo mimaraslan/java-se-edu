@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -18,18 +20,26 @@ public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "ID")
-    Long id;
+    private  Long id;
 
     @Column(name = "AGENT_NAME")
-    String agentName;
+    private String agentName;
 
     @Column(name = "EMAIL")
-    String email;
+    private String email;
 
     @Column(name = "PHONE")
-    String phone;
+    private String phone;
 
     @Column(name = "OFFICE_ADDRESS")
-    String officeAddress;
+    private String officeAddress;
+
+    //   1             m
+    // Agent        Property
+    @OneToMany (mappedBy = "agent",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private Set<Property> properties = new HashSet<>();
+
 
 }
