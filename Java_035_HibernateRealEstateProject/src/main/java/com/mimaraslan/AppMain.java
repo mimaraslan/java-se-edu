@@ -10,6 +10,8 @@ import com.mimaraslan.model.Property;
 import com.mimaraslan.model.Seller;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Set;
 
 public class AppMain {
 
@@ -82,6 +84,12 @@ public class AppMain {
         property.getBuyers().add(buyer);
         property.getBuyers().add(buyer2);
 
+        // INSERT SAVE CREATE
+        propertyDAO.saveOrUpdate(property);
+
+
+        // UPDATE
+        property.setType("Satıldı");
         propertyDAO.saveOrUpdate(property);
 
 
@@ -106,6 +114,57 @@ public class AppMain {
         property2.getBuyers().add(buyer2);
 
         propertyDAO.saveOrUpdate(property2);
+
+
+        System.out.println("Agent");
+        List<Agent> agents = agentDAO.getAgentsFindAll();
+
+        for (Agent a : agents ) {
+            System.out.println(a.getId() + " "+ a.getAgentName() +  " " + a.getEmail());
+        }
+
+        System.out.println("-----------------------");
+
+        System.out.println("Seller");
+        List<Seller> sellers =  sellerDAO.getSellersFindAll();
+
+        for (Seller s : sellers ) {
+            System.out.println(s.getId() + " "+  s.getFirstName() +  " " + s.getLastName());
+        }
+
+        System.out.println("-----------------------");
+
+        System.out.println("Buyer");
+
+        // DELETE
+        // buyerDAO.deleteBuyerFindById(1L);
+
+        List<Buyer> buyers = buyerDAO.getBuyersFindAll();
+
+        for (Buyer b : buyers ) {
+            System.out.println(b.getId() + " "+  b.getFirstName() +  " " + b.getLastName());
+        }
+
+
+        System.out.println("\n\nBuyer 1 ");
+        Buyer buyerObj = buyerDAO.getBuyerFindById(1L);
+        System.out.println(buyerObj.getId() + " " + buyerObj.getFirstName() +  " " + buyerObj.getLastName());
+
+
+        System.out.println("-----------------------");
+
+        List<Seller> allSellers = sellerDAO.getSellersFindAll();
+        System.out.println(allSellers);
+
+        for (Seller s : allSellers ) {
+            System.out.println(s.getId() +" " + s.getFirstName() +  " " + s.getLastName());
+        }
+
+
+
+
+
+
 
     }
 
