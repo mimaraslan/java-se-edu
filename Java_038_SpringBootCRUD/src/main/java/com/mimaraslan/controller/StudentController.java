@@ -54,7 +54,7 @@ public class StudentController {
     // http://localhost:8090/api/v1/student/1
     @PutMapping ("/student/{id}")
     public Student updateStudent(@PathVariable Long id,
-                                @RequestBody Student student) {
+                                 @RequestBody Student student) {
 
         Student studentInfo = studentService.getStudent(id);
 
@@ -67,6 +67,28 @@ public class StudentController {
         }
         return null;
     }
+
+
+
+    // PUT - UPDATE
+    // http://localhost:8090/api/v1/student/
+    @PutMapping ("/student/{id}")
+    public Student updateStudent2(@RequestBody Student student) {
+
+
+        Student studentInfo = studentService.getStudent(student.getId());
+        if(studentInfo != null) {
+            studentInfo.setId(student.getId());
+            studentInfo.setFirstName(student.getFirstName());
+            studentInfo.setLastName(student.getLastName());
+            studentInfo.setEmail(student.getEmail());
+            return studentService.updateStudent(studentInfo);
+        }
+        return null;
+    }
+
+
+
 
     // DELETE - DELETE
     // http://localhost:8090/api/v1/student/1
