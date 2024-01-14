@@ -16,34 +16,17 @@ public class EmployeeController {
     http://localhost:8090/anasayfa
 
      */
-    @GetMapping({"/", "/anasayfa"})
-    public String viewIndex (Map<String, Object> model){
+
+    @GetMapping({ "/", "/index" })
+    public String viewIndex(Map<String, Object> model) {
 
         Employee employee = new Employee();
         employee.setId(1L);
         employee.setFirstName("Banu");
         employee.setLastName("Şadiye");
         employee.setEmail("abc@asdadsa.com");
-        model.put("employee" , employee);
-        return "index";
-    }
 
-
-    //     http://localhost:8090/hello
-
-    @GetMapping("/hello")
-    public String viewHello(Model model) {
-/*
-        Employee employee = new Employee();
-        employee.setId(1L);
-        employee.setFirstName("Banu");
-        employee.setLastName("Şadiye");
-        employee.setEmail("abc@asdadsa.com");
-
-        model.addAttribute("employee", employee);
-        */
-
-        model.addAttribute("employee", null);
+        model.put("employee", employee);
         return "index";
     }
 

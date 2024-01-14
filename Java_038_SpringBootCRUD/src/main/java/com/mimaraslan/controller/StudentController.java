@@ -69,27 +69,6 @@ public class StudentController {
     }
 
 
-
-    // PUT - UPDATE
-    // http://localhost:8090/api/v1/student/
-    @PutMapping ("/student/{id}")
-    public Student updateStudent2(@RequestBody Student student) {
-
-
-        Student studentInfo = studentService.getStudent(student.getId());
-        if(studentInfo != null) {
-            studentInfo.setId(student.getId());
-            studentInfo.setFirstName(student.getFirstName());
-            studentInfo.setLastName(student.getLastName());
-            studentInfo.setEmail(student.getEmail());
-            return studentService.updateStudent(studentInfo);
-        }
-        return null;
-    }
-
-
-
-
     // DELETE - DELETE
     // http://localhost:8090/api/v1/student/1
     @DeleteMapping ("/student/{id}")
