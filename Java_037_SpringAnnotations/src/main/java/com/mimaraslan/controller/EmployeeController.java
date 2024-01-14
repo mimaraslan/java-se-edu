@@ -13,8 +13,7 @@ public class EmployeeController {
     /*
     http://localhost:8090
     http://localhost:8090/
-    http://localhost:8090/anasayfa
-
+    http://localhost:8090/index
      */
 
     @GetMapping({ "/", "/index" })
