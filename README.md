@@ -18,5 +18,5 @@ Spring Boot (DI - IoC) - MVC - Çok Katmanlı Mimari, Annotations - Lombok, Spri
 ### Eğitim 5 - Java Microservices ve Spring Cloud 
 Monolithic, Microservices Mimarileri, Sanallaştırma, Docker Image, Container, Hub Spring Cloud, Microservices Authorization, Authentication, JWT, RESTful API, OpenFeign, Postman, OpenApi Swagger UI, ConfigServer, Remote GitHub Config, ApiGateway, CircuitBreaker, Zipkin, Sleuth, SAGA, CQRS, Spring AMQP, RabbitMQ, Apache Kafka, Docker Compose
 
-### Eğitim 6 - CI/CD DevOps Pipeline Eğitimi
+### Eğitim 6 - CI/CD DevOps Pipeline
 Cloud AWS, Azure, GCP, Docker Image, Container, Hub, Docker Compose, Kubernetes (K8s), Pod, Deployment, Service, CI/CD DevOps Pipeline, Spring Boot projesi, Jenkins
