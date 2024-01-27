@@ -6,7 +6,7 @@ ext {
             springBoot          : "3.2.2",
             lombok              : "1.18.28",
             mapStruct           : "1.5.5.Final",
-            postgreSql          : "42.6.0",
+            postgreSql          : "42.7.1",
             swaggerApi          : "2.3.0"
 
     ]
@@ -24,8 +24,6 @@ ext {
     libs = [
             springBootWeb                   : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
             springBootDataJpa               : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
-
-
             postgreSql                      : "org.postgresql:postgresql:$versions.postgreSql",
             lombok                          : "org.projectlombok:lombok:$versions.lombok",
             mapStruct                       : "org.mapstruct:mapstruct:$versions.mapStruct",

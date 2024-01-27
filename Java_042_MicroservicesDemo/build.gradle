@@ -71,6 +71,7 @@ allprojects {
         implementation libs.mapStruct
         annotationProcessor libs.mapStructProcessor
         implementation libs.swaggerApi
+        implementation libs.postgreSql
     }
 }
 
