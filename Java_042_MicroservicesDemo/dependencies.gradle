@@ -29,6 +29,5 @@ ext {
             mapStruct                       : "org.mapstruct:mapstruct:$versions.mapStruct",
             mapStructProcessor              : "org.mapstruct:mapstruct-processor:$versions.mapStruct",
             swaggerApi                      : "org.springdoc:springdoc-openapi-starter-webmvc-ui:$versions.swaggerApi"
-
     ]
 }
