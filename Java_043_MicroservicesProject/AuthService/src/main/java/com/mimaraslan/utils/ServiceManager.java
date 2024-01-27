@@ -23,7 +23,6 @@ public class ServiceManager<T extends BaseEntity, ID> implements IService<T,ID>{
         return repository.save(t);
     }
 
-
     @Override
     public Iterable<T> saveAll(Iterable<T> t) {
         long time=System.currentTimeMillis();
@@ -35,13 +34,11 @@ public class ServiceManager<T extends BaseEntity, ID> implements IService<T,ID>{
         return repository.saveAll(t);
     }
 
-
     @Override
     public T update(T t) {
         t.setUpdateAt(System.currentTimeMillis());
         return repository.save(t);
     }
-
 
     @Override
     public void delete(T t) {

@@ -17,6 +17,5 @@ public class BaseEntity {
 
     Long createAt;
     Long updateAt;
-
     boolean state;
 }
