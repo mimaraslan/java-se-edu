@@ -44,14 +44,27 @@ public class AuthService extends ServiceManager<Auth, Long> {
     }
 
 
-    public String doLogin(DoLoginRequestDto dto) {
+    public String doLogin1(DoLoginRequestDto dto) {
 
         Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
 
       //  if (auth.isEmpty())
             // TODO execption
 
+
         return auth.get().getId().toString();
+    }
+
+
+    public Auth doLogin(DoLoginRequestDto dto) {
+
+        Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
+
+        //  if (auth.isEmpty())
+        // TODO execption
+
+
+        return auth.get();
     }
 
 

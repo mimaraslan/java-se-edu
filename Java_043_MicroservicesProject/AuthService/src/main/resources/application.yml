@@ -5,7 +5,7 @@ server:
 ##### data postgresql #####
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/AuthServiceDB   # PostgreSQL veritabanı URL'si
+    url: jdbc:postgresql://localhost:5432/Micro_AuthServiceDB   # PostgreSQL veritabanı URL'si
     username: postgres                                    # Veritabanı kullanıcı adı
     password: 123456789                                  # Veritabanı şifresi
     driver-class-name: org.postgresql.Driver             # PostgreSQL JDBC sürücüsü
