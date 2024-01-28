@@ -4,20 +4,17 @@ import com.mimaraslan.constant.EndPoint;
 import com.mimaraslan.dto.request.DoLoginRequestDto;
 import com.mimaraslan.dto.request.DoRegisterRequestDto;
 import com.mimaraslan.dto.response.DoRegisterResponseDto;
-import com.mimaraslan.dto.response.DoRegisterResponseIdDto;
 import com.mimaraslan.model.Auth;
 import com.mimaraslan.service.AuthService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 import static com.mimaraslan.constant.EndPoint.AUTH;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 //    http://localhost:9090/auth
 
@@ -27,6 +24,7 @@ import org.slf4j.LoggerFactory;
 public class AuthController {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+
 
     /*  // eskide kalan enjekte edilme durumu
     @Autowired
@@ -71,7 +69,20 @@ public class AuthController {
         return ResponseEntity.ok(authService.doLogin(dto));
     }
 
+
+    // parametresiz tokensiz herkesi cagiriyor
+/*    @GetMapping(GETALL)
     public ResponseEntity<  List <Auth>  > findAll()   {
+        return ResponseEntity.ok(authService.findAll());
+    }
+*/
+
+    @GetMapping(EndPoint.GETALL)
+    public ResponseEntity<  List <Auth>  > findAll(String token)   {
+        return ResponseEntity.ok(authService.findAll(token));
+    }
+
+    public ResponseEntity<String> getMessage(){
 
         String className = this.getClass().getSimpleName();
         // logger.trace("A TRACE Message: " + className);
@@ -80,11 +91,6 @@ public class AuthController {
         logger.warn("A WARN Message: " + className);
         // logger.error("An ERROR Message: " + className);
 
-        return ResponseEntity.ok(authService.findAll());
-    }
-
-
-    public ResponseEntity<String> getMessage(){
         return ResponseEntity.ok("AuthServis mesaji");
     }
 

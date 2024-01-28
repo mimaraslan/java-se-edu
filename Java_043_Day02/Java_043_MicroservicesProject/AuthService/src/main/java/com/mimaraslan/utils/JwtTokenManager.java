@@ -4,6 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -11,9 +12,24 @@ import java.util.Optional;
 
 @Component
 public class JwtTokenManager {
+    /*
     String secretKey = "123";
     String issuer = "abc";
     Long exDate = 1000L*60 * 5; // 5 dakika
+    */
+
+       // "123"
+    @Value("${auth-service.secret.key}")
+    String secretKey;
+
+    // "abc"
+    @Value("${auth-service.issuer}")
+    String issuer;
+
+    // 1000L*60 * 5; // 5 dakika
+    @Value("${auth-service.expire.date}")
+    Long expireDate;
+
 
    // 1. adım: token üret
     public Optional<String> createToken(Long id){
@@ -25,7 +41,7 @@ public class JwtTokenManager {
                   .withClaim("lastJoin", System.currentTimeMillis())
                   .withIssuer(issuer) // jwt tokeni olusturan yapi
                   .withIssuedAt(new Date() ) // jwt olusturulma zamani
-                  .withExpiresAt(new Date(System.currentTimeMillis() + exDate ))
+                  .withExpiresAt(new Date(System.currentTimeMillis() + expireDate ))
                   .sign(Algorithm.HMAC512(secretKey));
           return  Optional.of(token);
         } catch (Exception e){

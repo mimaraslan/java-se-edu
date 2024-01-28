@@ -18,3 +18,12 @@ spring:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+
+##### 1000L * 60 * 5 minutes
+auth-service:
+  secret:
+    key: 123456789
+  issuer: abcdef
+  expire:
+    date: 300000

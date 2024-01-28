@@ -5,12 +5,14 @@ import com.mimaraslan.dto.request.DoRegisterRequestDto;
 import com.mimaraslan.dto.response.DoRegisterResponseDto;
 import com.mimaraslan.exception.AuthServiceException;
 import com.mimaraslan.exception.ErrorType;
+import com.mimaraslan.mapper.IAuthMapper;
 import com.mimaraslan.model.Auth;
 import com.mimaraslan.repository.IAuthRepository;
 import com.mimaraslan.utils.JwtTokenManager;
 import com.mimaraslan.utils.ServiceManager;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -71,10 +73,10 @@ public class AuthService extends ServiceManager<Auth, Long> {
         auth.setEmail(dto.getEmail());
         auth.setCreateAt(System.currentTimeMillis());
         auth.setState(true);
-
         save(auth); // KAYIT
         */
 
+       /*
         // builder ile nesne - lombok ile nesne
         Auth auth = save(Auth.builder()
                 .username(dto.getUsername())
@@ -83,10 +85,16 @@ public class AuthService extends ServiceManager<Auth, Long> {
                 .createAt(System.currentTimeMillis())
                 .state(true)
                 .build());
+        */
 
+        Auth auth = IAuthMapper.INSTANCE.toAuth(dto);
+
+       // auth.setCreateAt(System.currentTimeMillis());
+       // auth.setState(true);
+        auth.setAddress("Dünya");
+        save(auth); // KAYIT
 
         System.out.println("auth: " +  auth);
-
 
         DoRegisterResponseDto responseDto = new DoRegisterResponseDto();
         responseDto.setUsername(dto.getUsername());
@@ -124,6 +132,24 @@ public class AuthService extends ServiceManager<Auth, Long> {
         return auth.get();
     }
     */
+
+
+    public List<Auth> findAll(String token) {
+
+        Optional<Long> id = null;
+
+        try{
+            id = jwtTokenManager.getIdInfoFromToken(token);
+        }catch (Exception e) {
+            throw  new AuthServiceException(ErrorType.INVALID_TOKEN);
+        }
+
+        if(findById(id.get()).isEmpty())
+            throw  new AuthServiceException(ErrorType.INVALID_TOKEN);
+
+        return repository.findAll();
+    }
+
 
 
 }

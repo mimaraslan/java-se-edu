@@ -21,7 +21,8 @@ public enum ErrorType {
 
     DOLOGIN_USERNAMEORPASSWORD_NOTEXISTS(1006,"Kullanıcı adı veya şifre hatalı.", HttpStatus.NOT_ACCEPTABLE),
 
-    INVALID_TOKEN(1007,"Geçersiz token.",HttpStatus.BAD_REQUEST),
+    INVALID_TOKEN(4000,"Geçersiz token.",HttpStatus.BAD_REQUEST),
+
     BAD_REQUEST(5001,"Geçersiz istek" ,HttpStatus.BAD_REQUEST ),
     INTERNAL_ERROR_SERVER(5100,"Sunucu Hatası",INTERNAL_SERVER_ERROR);
 

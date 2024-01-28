@@ -1,11 +1,14 @@
 package com.mimaraslan.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 
 @MappedSuperclass // ust sinif icin kullanilir
@@ -15,7 +18,11 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor // dolu paramereli hazirlayici yapici metodu olusturur
 public class BaseEntity {
 
+    @CreatedDate
     Long createAt;
+
+    @LastModifiedDate
     Long updateAt;
-    boolean state;
+
+    boolean state ;
 }
