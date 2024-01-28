@@ -1,0 +1,3 @@
+rootProject.name = 'Java_043_MicroservicesProject'
+include 'AuthService'
+

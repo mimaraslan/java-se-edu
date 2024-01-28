@@ -1,0 +1,20 @@
+##### port #####
+server:
+  port: 9090
+
+##### data postgresql #####
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Micro_AuthServiceDB   # PostgreSQL veritabanı URL'si
+    username: postgres                                    # Veritabanı kullanıcı adı
+    password: 123456789                                  # Veritabanı şifresi
+    driver-class-name: org.postgresql.Driver             # PostgreSQL JDBC sürücüsü
+  jpa:
+    hibernate:
+      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
+    show-sql: true
+
+##### swagger-ui path #####
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
