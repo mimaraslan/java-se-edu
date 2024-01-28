@@ -68,7 +68,6 @@ public class AuthController {
     @PostMapping(EndPoint.LOGIN)
     public ResponseEntity<String> doLogin(@RequestBody DoLoginRequestDto dto){
         System.out.println("DTO: " +  dto);
-
         return ResponseEntity.ok(authService.doLogin(dto));
     }
 

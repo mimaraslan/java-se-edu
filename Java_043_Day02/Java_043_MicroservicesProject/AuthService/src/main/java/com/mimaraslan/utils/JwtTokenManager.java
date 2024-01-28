@@ -16,7 +16,7 @@ public class JwtTokenManager {
     Long exDate = 1000L*60 * 5; // 5 dakika
 
    // 1. adım: token üret
-    private Optional<String> createToken(Long id){
+    public Optional<String> createToken(Long id){
         String token = "";
         try {
           token = JWT.create().withAudience()
@@ -34,7 +34,7 @@ public class JwtTokenManager {
     }
 
    // 2. adım: token doğrulama yap
-   private Boolean verifyToken(String token){
+   public Boolean verifyToken(String token){
         try {
             Algorithm  algorithm =  Algorithm.HMAC512(secretKey);
             JWTVerifier verifier = JWT.require(algorithm).withIssuer(issuer).build();
@@ -50,7 +50,7 @@ public class JwtTokenManager {
    }
 
    // 3. token içinden bilgiyi çöz ve çıkar.
-   private Optional<Long> getIdInfoFromToken(String token){
+   public Optional<Long> getIdInfoFromToken(String token){
 
        try {
            Algorithm  algorithm =  Algorithm.HMAC512(secretKey);

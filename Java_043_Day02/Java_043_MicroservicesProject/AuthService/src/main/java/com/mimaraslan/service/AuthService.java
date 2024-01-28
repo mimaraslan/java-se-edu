@@ -7,6 +7,7 @@ import com.mimaraslan.exception.AuthServiceException;
 import com.mimaraslan.exception.ErrorType;
 import com.mimaraslan.model.Auth;
 import com.mimaraslan.repository.IAuthRepository;
+import com.mimaraslan.utils.JwtTokenManager;
 import com.mimaraslan.utils.ServiceManager;
 import org.springframework.stereotype.Service;
 
@@ -17,14 +18,17 @@ import java.util.Optional;
 @Service
 public class AuthService extends ServiceManager<Auth, Long> {
 
-
     // @Autowired
     private final IAuthRepository repository;
 
-    public AuthService(IAuthRepository repository) {
+    private final JwtTokenManager jwtTokenManager;
+
+    public AuthService(IAuthRepository repository, JwtTokenManager jwtTokenManager) {
         super(repository);
         this.repository = repository;
+        this.jwtTokenManager = jwtTokenManager;
     }
+
 
     public Auth doRegister1(DoRegisterRequestDto dto) {
 
@@ -81,8 +85,6 @@ public class AuthService extends ServiceManager<Auth, Long> {
                 .build());
 
 
-
-
         System.out.println("auth: " +  auth);
 
 
@@ -93,6 +95,17 @@ public class AuthService extends ServiceManager<Auth, Long> {
     }
 
 
+    // JWTsiz sıradan düz bir login
+    public String doLoginOld(DoLoginRequestDto dto) {
+
+        Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
+
+        if (auth.isEmpty())
+            throw new AuthServiceException(ErrorType.DOLOGIN_USERNAMEORPASSWORD_NOTEXISTS);
+
+        return auth.get().getId().toString();
+    }
+
     public String doLogin(DoLoginRequestDto dto) {
 
         Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
@@ -100,8 +113,7 @@ public class AuthService extends ServiceManager<Auth, Long> {
         if (auth.isEmpty())
           throw new AuthServiceException(ErrorType.DOLOGIN_USERNAMEORPASSWORD_NOTEXISTS);
 
-
-        return auth.get().getId().toString();
+        return jwtTokenManager.createToken(auth.get().getId()).get();
     }
 
 /*
