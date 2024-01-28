@@ -16,6 +16,8 @@ import java.util.List;
 
 import static com.mimaraslan.constant.EndPoint.AUTH;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 //    http://localhost:9090/auth
 
@@ -23,6 +25,8 @@ import static com.mimaraslan.constant.EndPoint.AUTH;
 @RestController
 @RequestMapping(AUTH)
 public class AuthController {
+
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     /*  // eskide kalan enjekte edilme durumu
     @Autowired
@@ -64,6 +68,14 @@ public class AuthController {
     @PostMapping(EndPoint.LOGIN)
     public ResponseEntity<Auth> doLogin(@RequestBody DoLoginRequestDto dto){
         System.out.println("DTO: " +  dto);
+
+        String className = this.getClass().getSimpleName();
+       // logger.trace("A TRACE Message: " + className);
+       // logger.debug("A DEBUG Message: " + className);
+       // logger.info("An INFO Message: " + className);
+        logger.warn("A WARN Message: " + className);
+       // logger.error("An ERROR Message: " + className);
+
         return ResponseEntity.ok(authService.doLogin(dto));
     }
 

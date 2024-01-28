@@ -10,10 +10,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+
+
 @Service
 public class AuthService extends ServiceManager<Auth, Long> {
 
-  // @Autowired
+
+    // @Autowired
     private final IAuthRepository repository;
 
     public AuthService(IAuthRepository repository) {

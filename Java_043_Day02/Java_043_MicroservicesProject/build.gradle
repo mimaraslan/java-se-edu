@@ -72,6 +72,10 @@ allprojects {
         annotationProcessor libs.mapStructProcessor
         implementation libs.swaggerApi
         implementation libs.postgreSql
+        implementation  libs.log4jApi
+        implementation  libs.log4jCore
+        implementation  libs.log4jSlf4jImpl
+
     }
 }
 
