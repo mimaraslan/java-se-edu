@@ -3,6 +3,8 @@ package com.mimaraslan.service;
 import com.mimaraslan.dto.request.DoLoginRequestDto;
 import com.mimaraslan.dto.request.DoRegisterRequestDto;
 import com.mimaraslan.dto.response.DoRegisterResponseDto;
+import com.mimaraslan.exception.AuthServiceException;
+import com.mimaraslan.exception.ErrorType;
 import com.mimaraslan.model.Auth;
 import com.mimaraslan.repository.IAuthRepository;
 import com.mimaraslan.utils.ServiceManager;
@@ -52,9 +54,10 @@ public class AuthService extends ServiceManager<Auth, Long> {
 
         System.out.println("DoRegisterRequestDto: " +  dto);
 
-        // TODO  Exception
-        //if (repository.existsByUsername(dto.getUsername()))
-        //    throw new Exception()
+
+        // parola kontrolleri yapiliyor
+        if (!dto.getPassword().equals(dto.getRePassword()))
+            throw new AuthServiceException(ErrorType.REGISTER_PASSWORD_MISMATCH);
 
 
         /*
@@ -71,7 +74,7 @@ public class AuthService extends ServiceManager<Auth, Long> {
         // builder ile nesne - lombok ile nesne
         Auth auth = save(Auth.builder()
                 .username(dto.getUsername())
-                .password(dto.getPassword()) // TODO password rePassword
+                .password(dto.getPassword())
                 .email(dto.getEmail())
                 .createAt(System.currentTimeMillis())
                 .state(true)
@@ -90,28 +93,25 @@ public class AuthService extends ServiceManager<Auth, Long> {
     }
 
 
-    public String doLogin1(DoLoginRequestDto dto) {
+    public String doLogin(DoLoginRequestDto dto) {
 
         Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
 
-      //  if (auth.isEmpty())
-            // TODO execption
+        if (auth.isEmpty())
+          throw new AuthServiceException(ErrorType.DOLOGIN_USERNAMEORPASSWORD_NOTEXISTS);
 
 
         return auth.get().getId().toString();
     }
 
-
+/*
     public Auth doLogin(DoLoginRequestDto dto) {
 
         Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
 
-        //  if (auth.isEmpty())
-        // TODO execption
-
-
         return auth.get();
     }
+    */
 
 
 }

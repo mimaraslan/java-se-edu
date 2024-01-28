@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(AuthServiceException.class)
     @ResponseBody
-    public ResponseEntity<ErrorMessage> handleSatisException(AuthServiceException e) {
+    public ResponseEntity<ErrorMessage> handleAuthException(AuthServiceException e) {
         ErrorType errorType = e.getType();
         HttpStatus httpStatus = errorType.getStatus();
         return new ResponseEntity<ErrorMessage>(createErrorMesaj(errorType, e), httpStatus);
@@ -84,7 +84,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public final ResponseEntity<ErrorMessage> handleMethodArgumentMisMatchException(
             MethodArgumentTypeMismatchException exception) {
-
         ErrorType errorType = ErrorType.BAD_REQUEST;
         return new ResponseEntity<>(createError(errorType, exception), errorType.getStatus());
     }

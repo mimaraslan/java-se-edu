@@ -19,7 +19,7 @@ public enum ErrorType {
     REGISTER_PASSWORD_MISMATCH(1004,"Girilen parolalar uyuşmadı.",HttpStatus.BAD_REQUEST),
     REGISTER_USERNAME_EXISTS(1005, "Kullanıcı adı daha önce alınmış.", HttpStatus.BAD_REQUEST),
 
-    DOLOGIN_USERNAMEORPASSWORD_NOTEXISTS(1006,"Kullanıcı adı veya şifre hatalı.",HttpStatus.BAD_REQUEST),
+    DOLOGIN_USERNAMEORPASSWORD_NOTEXISTS(1006,"Kullanıcı adı veya şifre hatalı.", HttpStatus.NOT_ACCEPTABLE),
 
     INVALID_TOKEN(1007,"Geçersiz token.",HttpStatus.BAD_REQUEST),
     BAD_REQUEST(5001,"Geçersiz istek" ,HttpStatus.BAD_REQUEST ),

@@ -66,20 +66,21 @@ public class AuthController {
 
     //    http://localhost:9090/auth/login
     @PostMapping(EndPoint.LOGIN)
-    public ResponseEntity<Auth> doLogin(@RequestBody DoLoginRequestDto dto){
+    public ResponseEntity<String> doLogin(@RequestBody DoLoginRequestDto dto){
         System.out.println("DTO: " +  dto);
-
-        String className = this.getClass().getSimpleName();
-       // logger.trace("A TRACE Message: " + className);
-       // logger.debug("A DEBUG Message: " + className);
-       // logger.info("An INFO Message: " + className);
-        logger.warn("A WARN Message: " + className);
-       // logger.error("An ERROR Message: " + className);
 
         return ResponseEntity.ok(authService.doLogin(dto));
     }
 
     public ResponseEntity<  List <Auth>  > findAll()   {
+
+        String className = this.getClass().getSimpleName();
+        // logger.trace("A TRACE Message: " + className);
+        // logger.debug("A DEBUG Message: " + className);
+        // logger.info("An INFO Message: " + className);
+        logger.warn("A WARN Message: " + className);
+        // logger.error("An ERROR Message: " + className);
+
         return ResponseEntity.ok(authService.findAll());
     }
 

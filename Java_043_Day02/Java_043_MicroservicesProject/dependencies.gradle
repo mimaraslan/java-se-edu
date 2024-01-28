@@ -11,8 +11,10 @@ ext {
             log4jApi            : "2.20.0",
             log4jCore           : "2.20.0",
             log4jSlf4jImpl      : "2.20.0",
-
+            jwt                 : "4.4.0"
     ]
+
+
 
 
 
@@ -36,8 +38,7 @@ ext {
             swaggerApi                      : "org.springdoc:springdoc-openapi-starter-webmvc-ui:$versions.swaggerApi",
             log4jApi                        : "org.apache.logging.log4j:log4j-api:$versions.log4jApi",
             log4jCore                       : "org.apache.logging.log4j:log4j-core:$versions.log4jCore",
-            log4jSlf4jImpl                  : "org.apache.logging.log4j:log4j-slf4j-impl:$versions.log4jSlf4jImpl"
-
-
+            log4jSlf4jImpl                  : "org.apache.logging.log4j:log4j-slf4j-impl:$versions.log4jSlf4jImpl",
+            jwt                             : "com.auth0:java-jwt:$versions.jwt"
     ]
 }
