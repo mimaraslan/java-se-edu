@@ -78,7 +78,7 @@ public class AuthController {
 */
 
     @GetMapping(EndPoint.GETALL)
-    public ResponseEntity<  List <Auth>  > findAll(String token)   {
+    public ResponseEntity<  List <Auth>  > findAll(@RequestParam String token)   {
         return ResponseEntity.ok(authService.findAll(token));
     }
 
