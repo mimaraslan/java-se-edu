@@ -1,21 +1,41 @@
 package com.mimaraslan.controller;
 
+import com.mimaraslan.dto.request.UserProfileSaveRequestDto;
+import com.mimaraslan.model.UserProfile;
+import com.mimaraslan.service.UserProfileService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-//    http://localhost:9091/agent
+import java.util.List;
+
+import static com.mimaraslan.constant.EndPoint.*;
+
+//    http://localhost:9091/user
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/user")
+@RequestMapping(USER)
 public class UserProfileController {
+
+    private final UserProfileService userProfileService;
 
     //    http://localhost:9091/user/hello
     @GetMapping("/hello")
     public String hello (){
         return "UserProfile Hi" ;
+    }
+
+    //    http://localhost:9091/user/save
+    @PostMapping(SAVE)
+    public ResponseEntity<Boolean> save (@RequestBody UserProfileSaveRequestDto dto){
+        userProfileService.save(dto);
+        return ResponseEntity.ok(Boolean.TRUE);
+    }
+
+    @GetMapping(GET_ALL)
+    public ResponseEntity<List<UserProfile>> findAll()   {
+        return ResponseEntity.ok(userProfileService.findAll());
     }
 
 
