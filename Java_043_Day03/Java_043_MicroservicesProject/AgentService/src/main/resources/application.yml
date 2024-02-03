@@ -37,18 +37,22 @@
 
 
 
-
 ##### port #####
 server:
   port: 9092
 
-##### data postgresql #####
+##### database #####
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/Micro_AgentServiceDB   # PostgreSQL veritabanı URL'si
-    username: postgres                                    # Veritabanı kullanıcı adı
+    url: jdbc:mysql://localhost:3306/micro_agentservicedb   # MySQL veritabanı URL'si
+    username: root                                    # Veritabanı kullanıcı adı
     password: 123456789                                  # Veritabanı şifresi
-    driver-class-name: org.postgresql.Driver             # PostgreSQL JDBC sürücüsü
+    driver-class-name: com.mysql.cj.jdbc.Driver            # MySQL JDBC sürücüsü
+
+#    url: jdbc:postgresql://localhost:5432/Micro_AgentServiceDB   # PostgreSQL veritabanı URL'si
+#    username: postgres                                    # Veritabanı kullanıcı adı
+#    password: 123456789                                  # Veritabanı şifresi
+#    driver-class-name: org.postgresql.Driver             # PostgreSQL JDBC sürücüsü
   jpa:
     hibernate:
       ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi

@@ -3,6 +3,6 @@ include 'AuthService'
 include 'UserProfileService'
 include 'BuyerService'
 include 'SellerService'
-include 'AgentSevice'
+include 'AgentService'
 include 'PropertyService'
 

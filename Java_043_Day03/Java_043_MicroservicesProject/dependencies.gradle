@@ -9,10 +9,9 @@ ext {
             postgreSql          : "42.7.1",
             swaggerApi          : "2.3.0",
             log4j               : "2.20.0",
-            jwt                 : "4.4.0"
+            jwt                 : "4.4.0",
+            mySql               : "8.3.0"
     ]
-
-
 
 
 
@@ -37,6 +36,10 @@ ext {
             log4jApi                        : "org.apache.logging.log4j:log4j-api:$versions.log4j",
             log4jCore                       : "org.apache.logging.log4j:log4j-core:$versions.log4j",
             log4jSlf4jImpl                  : "org.apache.logging.log4j:log4j-slf4j-impl:$versions.log4j",
-            jwt                             : "com.auth0:java-jwt:$versions.jwt"
+            jwt                             : "com.auth0:java-jwt:$versions.jwt",
+            mySql                           : "com.mysql:mysql-connector-j:$versions.mySql",
+
+
+
     ]
 }
