@@ -38,4 +38,4 @@ build/
 ### Mac OS ###
 .DS_Store
 /.metadata/
-Java_043_Day03/Java_043_MicroservicesProject/environment-my.bat
+# Java_043_Day03/Java_043_MicroservicesProject/environment-my.bat
