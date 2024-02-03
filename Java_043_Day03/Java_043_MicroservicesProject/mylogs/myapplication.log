@@ -1,0 +1,66 @@
+2024-01-28T11:20:39.047-05:00  INFO 14500 --- [main] com.mimaraslan.AuthServiceApp            : Starting AuthServiceApp using Java 17.0.7 with PID 14500 (D:\workspace\java-se-edu\Java_043_Day02\Java_043_MicroservicesProject\AuthService\build\classes\java\main started by mimar in D:\workspace\java-se-edu\Java_043_Day02\Java_043_MicroservicesProject)
+2024-01-28T11:20:39.049-05:00  INFO 14500 --- [main] com.mimaraslan.AuthServiceApp            : No active profile set, falling back to 1 default profile: "default"
+2024-01-28T11:20:39.592-05:00  INFO 14500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-28T11:20:39.635-05:00  INFO 14500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-01-28T11:20:39.972-05:00  INFO 14500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-01-28T11:20:39.980-05:00  INFO 14500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-28T11:20:39.980-05:00  INFO 14500 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-28T11:20:40.021-05:00  INFO 14500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-28T11:20:40.021-05:00  INFO 14500 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 936 ms
+2024-01-28T11:20:40.335-05:00  INFO 14500 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-28T11:20:40.352-05:00  INFO 14500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-28T11:20:40.620-05:00  INFO 14500 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6ba060af
+2024-01-28T11:20:40.621-05:00  INFO 14500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-28T11:20:41.295-05:00  INFO 14500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-28T11:20:41.604-05:00  WARN 14500 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-28T11:20:41.930-05:00  INFO 14500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path ''
+2024-01-28T11:20:41.936-05:00  INFO 14500 --- [main] com.mimaraslan.AuthServiceApp            : Started AuthServiceApp in 3.329 seconds (process running for 3.728)
+2024-01-28T11:20:55.143-05:00  INFO 14500 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-28T11:20:55.145-05:00  INFO 14500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-28T11:20:55.147-05:00  INFO 14500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-28T11:20:57.082-05:00  INFO 448 --- [main] com.mimaraslan.AuthServiceApp            : Starting AuthServiceApp using Java 17.0.7 with PID 448 (D:\workspace\java-se-edu\Java_043_Day02\Java_043_MicroservicesProject\AuthService\build\classes\java\main started by mimar in D:\workspace\java-se-edu\Java_043_Day02\Java_043_MicroservicesProject)
+2024-01-28T11:20:57.084-05:00  INFO 448 --- [main] com.mimaraslan.AuthServiceApp            : No active profile set, falling back to 1 default profile: "default"
+2024-01-28T11:20:57.623-05:00  INFO 448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-28T11:20:57.670-05:00  INFO 448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2024-01-28T11:20:58.033-05:00  INFO 448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-01-28T11:20:58.052-05:00  INFO 448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-28T11:20:58.052-05:00  INFO 448 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-28T11:20:58.089-05:00  INFO 448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-28T11:20:58.089-05:00  INFO 448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2024-01-28T11:20:58.406-05:00  INFO 448 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-28T11:20:58.424-05:00  INFO 448 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-28T11:20:58.534-05:00  INFO 448 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3973b6d4
+2024-01-28T11:20:58.535-05:00  INFO 448 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-28T11:20:59.199-05:00  INFO 448 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-28T11:20:59.513-05:00  WARN 448 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-28T11:20:59.823-05:00  INFO 448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path ''
+2024-01-28T11:20:59.841-05:00  INFO 448 --- [main] com.mimaraslan.AuthServiceApp            : Started AuthServiceApp in 3.124 seconds (process running for 3.607)
+2024-01-28T11:21:45.545-05:00  INFO 448 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-28T11:21:45.547-05:00  INFO 448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-28T11:21:45.549-05:00  INFO 448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-28T11:21:47.922-05:00  INFO 27696 --- [main] com.mimaraslan.AuthServiceApp            : Starting AuthServiceApp using Java 17.0.7 with PID 27696 (D:\workspace\java-se-edu\Java_043_Day02\Java_043_MicroservicesProject\AuthService\build\classes\java\main started by mimar in D:\workspace\java-se-edu\Java_043_Day02\Java_043_MicroservicesProject)
+2024-01-28T11:21:47.923-05:00  INFO 27696 --- [main] com.mimaraslan.AuthServiceApp            : No active profile set, falling back to 1 default profile: "default"
+2024-01-28T11:21:48.420-05:00  INFO 27696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-28T11:21:48.458-05:00  INFO 27696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
+2024-01-28T11:21:48.755-05:00  INFO 27696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-01-28T11:21:48.763-05:00  INFO 27696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-28T11:21:48.763-05:00  INFO 27696 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-01-28T11:21:48.808-05:00  INFO 27696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-28T11:21:48.809-05:00  INFO 27696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 855 ms
+2024-01-28T11:21:49.097-05:00  INFO 27696 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-28T11:21:49.116-05:00  INFO 27696 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-28T11:21:49.226-05:00  INFO 27696 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@68b7bdcb
+2024-01-28T11:21:49.227-05:00  INFO 27696 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-28T11:21:49.894-05:00  INFO 27696 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-28T11:21:50.176-05:00  WARN 27696 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-28T11:21:50.483-05:00  INFO 27696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path ''
+2024-01-28T11:21:50.490-05:00  INFO 27696 --- [main] com.mimaraslan.AuthServiceApp            : Started AuthServiceApp in 2.97 seconds (process running for 3.336)
+2024-01-28T11:22:14.504-05:00  INFO 27696 --- [http-nio-9090-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-28T11:22:14.504-05:00  INFO 27696 --- [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-28T11:22:14.505-05:00  INFO 27696 --- [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-01-28T11:22:14.591-05:00  INFO 27696 --- [http-nio-9090-exec-4] c.mimaraslan.controller.AuthController   : An INFO Message: AuthController
+2024-01-28T11:22:14.592-05:00  WARN 27696 --- [http-nio-9090-exec-4] c.mimaraslan.controller.AuthController   : A WARN Message: AuthController
+2024-01-28T11:22:14.592-05:00 ERROR 27696 --- [http-nio-9090-exec-4] c.mimaraslan.controller.AuthController   : An ERROR Message: AuthController
+2024-01-28T11:23:44.482-05:00  INFO 27696 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-28T11:23:44.483-05:00  INFO 27696 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-28T11:23:44.485-05:00  INFO 27696 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
