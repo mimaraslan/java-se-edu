@@ -17,4 +17,4 @@ setx GITHUB_CONFIG_PATH_PROJECT "https://github.com/mimaraslan/config-server-rem
 setx GITHUB_USERNAME "mimaraslan"
 
 @REM https://github.com/settings/tokens
-setx GITHUB_TOKEN_KEY "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"
+setx GITHUB_TOKEN_KEY "asadadadadaddadadasdadasadsadad"
