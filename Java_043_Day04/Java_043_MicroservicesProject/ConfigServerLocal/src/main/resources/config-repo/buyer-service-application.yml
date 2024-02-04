@@ -1,14 +1,14 @@
 ###### port #####
 #server:
-#  port: ${AUTH_SERVER_PORT}
+#  port: ${BUYER_SERVER_PORT}
 #
 ###### data postgresql #####
 #spring:
 #  datasource:
-#    url: jdbc:${AUTH_DB_PROTOCOL}://${AUTH_DB_IP}:${AUTH_DB_PORT}/${AUTH_DB_NAME}   # PostgreSQL veritabanı URL'si
-#    username: ${AUTH_DB_USERNAME}                                    # Veritabanı kullanıcı adı
-#    password: ${AUTH_DB_PASSWORD}                                 # Veritabanı şifresi
-#    driver-class-name: ${AUTH_DB_DRIVER}            # PostgreSQL JDBC sürücüsü
+#    url: jdbc:${BUYER_DB_PROTOCOL}://${BUYER_DB_IP}:${BUYER_DB_PORT}/${BUYER_DB_NAME}   # PostgreSQL veritabanı URL'si
+#    username: ${BUYER_DB_USERNAME}                                    # Veritabanı kullanıcı adı
+#    password: ${BUYER_DB_PASSWORD}                                 # Veritabanı şifresi
+#    driver-class-name: ${BUYER_DB_DRIVER}            # PostgreSQL JDBC sürücüsü
 #  jpa:
 #    hibernate:
 #      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
@@ -20,11 +20,11 @@
 #    path: /swagger-ui.html
 #
 #
-###### 1000L * 60 * 5 minutes
+###### Time minutes
 #auth-service:
 #  secret:
-#    key: ${AUTH_SECRET_KEY}
-#  issuer: ${AUTH_ISSUER}
+#    key: ${BUYER_SECRET_KEY}
+#  issuer: ${BUYER_ISSUER}
 #  expire:
 #    date: 300000
 
