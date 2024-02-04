@@ -2,13 +2,13 @@
 server:
   port: ${AUTH_SERVER_PORT}
 
-##### data postgresql #####
+##### database #####
 spring:
   datasource:
-    url: jdbc:${AUTH_DB_PROTOCOL}://${AUTH_DB_IP}:${AUTH_DB_PORT}/${AUTH_DB_NAME}   # PostgreSQL veritabanı URL'si
+    url: jdbc:${AUTH_DB_PROTOCOL}://${AUTH_DB_IP}:${AUTH_DB_PORT}/${AUTH_DB_NAME}   # Veritabanı URL'si
     username: ${AUTH_DB_USERNAME}                                    # Veritabanı kullanıcı adı
     password: ${AUTH_DB_PASSWORD}                                 # Veritabanı şifresi
-    driver-class-name: ${AUTH_DB_DRIVER}            # PostgreSQL JDBC sürücüsü
+    driver-class-name: ${AUTH_DB_DRIVER}            # JDBC sürücüsü
   jpa:
     hibernate:
       ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi

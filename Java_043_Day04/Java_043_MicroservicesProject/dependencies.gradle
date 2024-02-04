@@ -51,9 +51,8 @@ ext {
             springCloudOpenFeign            : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
             springCloudConfigClient         : "org.springframework.cloud:spring-cloud-config-client:$versions.springCloud",
             springCloudConfigServer         : "org.springframework.cloud:spring-cloud-config-server:$versions.springCloud",
-            springCloudStarterConfig        : "org.springframework.cloud:spring-cloud-starter-config:$versions.springCloud"
-
-
+            springCloudStarterConfig        : "org.springframework.cloud:spring-cloud-starter-config:$versions.springCloud",
+            springCloudGateway               : "org.springframework.cloud:spring-cloud-starter-gateway:$versions.springCloud"
 
     ]
 }

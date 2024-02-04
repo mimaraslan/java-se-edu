@@ -1,0 +1,10 @@
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    config:
+      uri: http://localhost:8888
+  config:
+    import: "configserver:"
+  application:
+    name:  api-gateway-service-application

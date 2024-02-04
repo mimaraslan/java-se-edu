@@ -1,0 +1,33 @@
+server:
+  port: 80
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - RewritePath=/(?<segment>.*),/$\{segment}
+      routes:
+        - id: auth-service
+          uri: http://localhost:9090
+          predicates:
+            - Path=/auth/**
+        - id: user-profile-service
+          uri: http://localhost:9091
+          predicates:
+            - Path=/user/**
+        - id: agent-service
+          uri: http://localhost:9092
+          predicates:
+            - Path=/agent/**
+        - id: buyer-service
+          uri: http://localhost:9093
+          predicates:
+            - Path=/buyer/**
+        - id: property-service
+          uri: http://localhost:9094
+          predicates:
+            - Path=/property/**
+        - id: seller-service
+          uri: http://localhost:9095
+          predicates:
+            - Path=/seller/**

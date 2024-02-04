@@ -64,7 +64,7 @@ springdoc:
     path: /swagger-ui.html
 
 
-##### 1000L * 60 * 5 minutes
+#####  minutes ## 1000L * 60 * 5
 auth-service:
   secret:
     key: Istanbul34
