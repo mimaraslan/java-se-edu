@@ -1,0 +1,8 @@
+dependencies {
+    implementation libs.postgreSql
+    implementation libs.mySql
+    implementation libs.springBootDataJpa
+    implementation libs.lombok
+    implementation libs.swaggerApi
+    implementation libs.jwt
+}

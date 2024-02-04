@@ -99,18 +99,16 @@ public class AuthService extends ServiceManager<Auth, Long> {
        // auth.setCreateAt(System.currentTimeMillis());
        // auth.setState(true);
         auth.setAddress("Dünya");
-        save(auth); // KAYIT
+     //   save(auth); // KAYIT
 
 
-/*        // Baska bir servisi cagiriyoruz
+        // BASKA BIR SERVIS
         userProfileManager.save(UserProfileSaveRequestDto.builder()
                 .authId(auth.getId())
                 .username(auth.getUsername())
                 .email(auth.getEmail())
                 .build());
-*/
-        // Baska bir servisi mapper ile cagiriyoruz.
-        userProfileManager.save(IAuthMapper.INSTANCE.fromAuth(auth));
+
 
         System.out.println("auth: " +  auth);
 

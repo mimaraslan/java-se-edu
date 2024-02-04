@@ -1,0 +1,52 @@
+ext {
+    /**
+     * Bağımlılıkları versiyonlama işlemleri:
+     */
+    versions = [
+            springBoot          : "3.2.2",
+            springCloud         : "4.1.0",
+            lombok              : "1.18.28",
+            mapStruct           : "1.5.5.Final",
+            postgreSql          : "42.7.1",
+            swaggerApi          : "2.3.0",
+            log4j               : "2.20.0",
+            jwt                 : "4.4.0",
+            mySql               : "8.3.0"
+
+    ]
+
+
+
+
+    /**
+     * Bu kısımda bağımlılık listesini oluştracağız. K:V
+     * 1. bağımlılığa bir ad belirle
+     * 2. iki nokta üst üste(:)
+     * 3. Projenin group idsini yazın.
+     * 4. iki nokta üst üste(:)
+     * 5. Projenin artifact id'sini yazın.
+     * 6. iki nokta üst üste(:)
+     * 7. Versiyon numarasını veya yukarıda belirttiğimiz key değerini çağır.
+     */
+    libs = [
+            springBootWeb                   : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+            springBootDataJpa               : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
+
+            springCloudOpenFeign            : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
+
+            postgreSql                      : "org.postgresql:postgresql:$versions.postgreSql",
+            mySql                           : "com.mysql:mysql-connector-j:$versions.mySql",
+
+            lombok                          : "org.projectlombok:lombok:$versions.lombok",
+            mapStruct                       : "org.mapstruct:mapstruct:$versions.mapStruct",
+            mapStructProcessor              : "org.mapstruct:mapstruct-processor:$versions.mapStruct",
+            swaggerApi                      : "org.springdoc:springdoc-openapi-starter-webmvc-ui:$versions.swaggerApi",
+
+            log4jApi                        : "org.apache.logging.log4j:log4j-api:$versions.log4j",
+            log4jCore                       : "org.apache.logging.log4j:log4j-core:$versions.log4j",
+            log4jSlf4jImpl                  : "org.apache.logging.log4j:log4j-slf4j-impl:$versions.log4j",
+
+            jwt                             : "com.auth0:java-jwt:$versions.jwt",
+
+    ]
+}
