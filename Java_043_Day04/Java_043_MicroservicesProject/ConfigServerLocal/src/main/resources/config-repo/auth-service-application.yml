@@ -1,0 +1,69 @@
+##### port #####
+server:
+  port: ${AUTH_SERVER_PORT}
+
+##### data postgresql #####
+spring:
+  datasource:
+    url: jdbc:${AUTH_DB_PROTOCOL}://${AUTH_DB_IP}:${AUTH_DB_PORT}/${AUTH_DB_NAME}   # PostgreSQL veritabanı URL'si
+    username: ${AUTH_DB_USERNAME}                                    # Veritabanı kullanıcı adı
+    password: ${AUTH_DB_PASSWORD}                                 # Veritabanı şifresi
+    driver-class-name: ${AUTH_DB_DRIVER}            # PostgreSQL JDBC sürücüsü
+  jpa:
+    hibernate:
+      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
+    show-sql: true
+
+##### swagger-ui path #####
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+##### 1000L * 60 * 5 minutes
+auth-service:
+  secret:
+    key: ${AUTH_SECRET_KEY}
+  issuer: ${AUTH_ISSUER}
+  expire:
+    date: 300000
+
+
+
+
+
+
+
+
+
+
+
+###### port #####
+#server:
+#  port: 9090
+#
+###### data postgresql #####
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/Micro_AuthServiceDB   # PostgreSQL veritabanı URL'si
+#    username: postgres                                    # Veritabanı kullanıcı adı
+#    password: 123456789                                  # Veritabanı şifresi
+#    driver-class-name: org.postgresql.Driver             # PostgreSQL JDBC sürücüsü
+#  jpa:
+#    hibernate:
+#      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
+#    show-sql: true
+#
+###### swagger-ui path #####
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#
+#
+###### 1000L * 60 * 5 minutes
+#auth-service:
+#  secret:
+#    key: Istanbul34
+#  issuer: Ankara06
+#  expire:
+#    date: 300000
