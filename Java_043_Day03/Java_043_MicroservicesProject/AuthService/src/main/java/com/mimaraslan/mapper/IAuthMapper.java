@@ -20,6 +20,6 @@ public interface IAuthMapper {
     })
     */
     @Mapping(target = "authId", source = "id")
-    UserProfileSaveRequestDto fromAuth (final Auth auth);
+    UserProfileSaveRequestDto toDto (final Auth auth);
 
 }

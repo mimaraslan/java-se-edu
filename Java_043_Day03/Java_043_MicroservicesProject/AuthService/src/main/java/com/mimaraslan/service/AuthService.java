@@ -31,7 +31,9 @@ public class AuthService extends ServiceManager<Auth, Long> {
     private final IUserProfileManager userProfileManager;
 
 
-    public AuthService(IAuthRepository repository, JwtTokenManager jwtTokenManager, IUserProfileManager userProfileManager) {
+    public AuthService(IAuthRepository repository,
+                       JwtTokenManager jwtTokenManager,
+                       IUserProfileManager userProfileManager) {
         super(repository);
         this.repository = repository;
         this.jwtTokenManager = jwtTokenManager;
@@ -110,7 +112,7 @@ public class AuthService extends ServiceManager<Auth, Long> {
                 .build());
 */
         // Baska bir servisi mapper ile cagiriyoruz.
-        userProfileManager.save(IAuthMapper.INSTANCE.fromAuth(auth));
+        userProfileManager.save(IAuthMapper.INSTANCE.toDto(auth));
 
         System.out.println("auth: " +  auth);
 

@@ -15,5 +15,5 @@ import org.springframework.web.bind.annotation.RequestBody;
         url="http://localhost:9091/user" )
 public interface IUserProfileManager {
     @PostMapping("/save")
-    ResponseEntity<Boolean> save(@RequestBody UserProfileSaveRequestDto dto);
+    ResponseEntity<Boolean> save (@RequestBody UserProfileSaveRequestDto dto);
 }
