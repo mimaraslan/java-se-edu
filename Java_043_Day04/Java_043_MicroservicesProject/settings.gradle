@@ -6,4 +6,5 @@ include 'SellerService'
 include 'AgentService'
 include 'PropertyService'
 include 'ConfigServerLocal'
+include 'ConfigServerRemote'
 

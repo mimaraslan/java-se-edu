@@ -12,3 +12,7 @@ setx AUTH_DB_PASSWORD "123456789"
 setx AUTH_SECRET_KEY "Istanbul34"
 setx AUTH_ISSUER "Ankara06"
 
+
+setx GITHUB_CONFIG_PATH_PROJECT "https://github.com/mimaraslan/config-server-remote-repo.git"
+setx GITHUB_USERNAME "mimaraslan"
+setx GITHUB_TOKEN_KEY "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"
