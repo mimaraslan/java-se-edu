@@ -15,4 +15,6 @@ setx AUTH_ISSUER "Ankara06"
 
 setx GITHUB_CONFIG_PATH_PROJECT "https://github.com/mimaraslan/config-server-remote-repo.git"
 setx GITHUB_USERNAME "mimaraslan"
+
+@REM https://github.com/settings/tokens
 setx GITHUB_TOKEN_KEY "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"
