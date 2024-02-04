@@ -29,8 +29,7 @@ public class UserProfileController {
     //    http://localhost:9091/user/save
     @PostMapping(SAVE)
     public ResponseEntity<Boolean> save (@RequestBody UserProfileSaveRequestDto dto){
-        userProfileService.save(dto);
-        return ResponseEntity.ok(Boolean.TRUE);
+        return ResponseEntity.ok(userProfileService.save(dto));
     }
 
     @GetMapping(GET_ALL)

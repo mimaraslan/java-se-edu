@@ -52,5 +52,4 @@ public class UserProfileService extends ServiceManager<UserProfile, Long> {
 
 
 
-
 }

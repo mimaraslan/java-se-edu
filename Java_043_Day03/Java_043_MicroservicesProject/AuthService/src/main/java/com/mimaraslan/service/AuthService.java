@@ -2,9 +2,11 @@ package com.mimaraslan.service;
 
 import com.mimaraslan.dto.request.DoLoginRequestDto;
 import com.mimaraslan.dto.request.DoRegisterRequestDto;
+import com.mimaraslan.dto.request.UserProfileSaveRequestDto;
 import com.mimaraslan.dto.response.DoRegisterResponseDto;
 import com.mimaraslan.exception.AuthServiceException;
 import com.mimaraslan.exception.ErrorType;
+import com.mimaraslan.manager.IUserProfileManager;
 import com.mimaraslan.mapper.IAuthMapper;
 import com.mimaraslan.model.Auth;
 import com.mimaraslan.repository.IAuthRepository;
@@ -25,10 +27,15 @@ public class AuthService extends ServiceManager<Auth, Long> {
 
     private final JwtTokenManager jwtTokenManager;
 
-    public AuthService(IAuthRepository repository, JwtTokenManager jwtTokenManager) {
+
+    private final IUserProfileManager userProfileManager;
+
+
+    public AuthService(IAuthRepository repository, JwtTokenManager jwtTokenManager, IUserProfileManager userProfileManager) {
         super(repository);
         this.repository = repository;
         this.jwtTokenManager = jwtTokenManager;
+        this.userProfileManager = userProfileManager;
     }
 
 
@@ -92,7 +99,16 @@ public class AuthService extends ServiceManager<Auth, Long> {
        // auth.setCreateAt(System.currentTimeMillis());
        // auth.setState(true);
         auth.setAddress("Dünya");
-        save(auth); // KAYIT
+     //   save(auth); // KAYIT
+
+
+        // BASKA BIR SERVIS
+        userProfileManager.save(UserProfileSaveRequestDto.builder()
+                .authId(auth.getId())
+                .username(auth.getUsername())
+                .email(auth.getEmail())
+                .build());
+
 
         System.out.println("auth: " +  auth);
 
@@ -114,6 +130,10 @@ public class AuthService extends ServiceManager<Auth, Long> {
         return auth.get().getId().toString();
     }
 
+    /**
+     * Kullanıcıyı doğrulayacak ve kullanıcının sistem içinde hareket edebilmesi için ona özel bir kimlik verecek.
+     * Token -> JWT token
+     */
     public String doLogin(DoLoginRequestDto dto) {
 
         Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
