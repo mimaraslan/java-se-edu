@@ -9,9 +9,8 @@ spring:
   application:
     name:  agent-service-application
 
-
-#management:
-#  tracing:
-#    sampling:
-#      probability: 0.1
+management:
+  tracing:
+    sampling:
+      probability: 1
 

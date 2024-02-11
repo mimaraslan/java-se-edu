@@ -84,14 +84,14 @@ allprojects {
 
   //      implementation libs.springCloudSleuthZipkin
    //     implementation libs.springCloudSleuth
-        implementation libs.springCloudCommons
-        implementation libs.springBootWebMigrator
+   //     implementation libs.springCloudCommons
+  //      implementation libs.springBootWebMigrator
         implementation libs.springActuator
    //     implementation libs.reporterBrave
         implementation libs.observation
         implementation libs.bridgeBrave
         implementation libs.reporterBrave
-        testImplementation  libs.feignMicrometer
+     //   testImplementation  libs.feignMicrometer
 
 
 

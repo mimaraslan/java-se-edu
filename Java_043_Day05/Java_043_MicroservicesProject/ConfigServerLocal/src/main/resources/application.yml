@@ -29,3 +29,15 @@ spring:
 #    compatibility-verifier:
 #      enabled: false
 
+
+#logging:
+#  file:
+#    path: logs/
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_}"
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1

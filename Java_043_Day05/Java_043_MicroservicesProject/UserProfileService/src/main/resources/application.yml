@@ -17,5 +17,8 @@ spring:
     service:
       name: config-server
 
-
+management:
+  tracing:
+    sampling:
+      probability: 1
 
