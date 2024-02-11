@@ -20,7 +20,7 @@ allprojects {
     apply from  :  "${rootDir}/dependencies.gradle"
     apply plugin: 'application'
     group = 'com.mimaraslan'
-    version = 'v.0.0.1'
+    version = 'v.1.0.0'
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility=JavaVersion.VERSION_17
 }
@@ -92,6 +92,8 @@ allprojects {
         implementation libs.bridgeBrave
         implementation libs.reporterBrave
      //   testImplementation  libs.feignMicrometer
+        implementation libs.validation
+
 
 
 

@@ -10,8 +10,5 @@ dependencies {
     implementation libs.observation
     implementation libs.bridgeBrave
     implementation libs.reporterBrave
- //   testImplementation  libs.feignMicrometer
     implementation libs.springActuator
-
-
 }

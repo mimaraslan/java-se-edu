@@ -2,16 +2,13 @@ server:
   port: 80
 
 spring:
-  zipkin:
-    enabled: true
-    base-url: http://localhost:9411/
-    service:
-      name: api-gateway-service
-    sender:
-      type: web
-  sleuth:
-    sampler:
-      probability: 1
+#  zipkin:
+#    enabled: true
+#    base-url: http://localhost:9411
+#    service:
+#      name: api-gateway-service
+#    sender:
+#      type: web
   cloud:
     gateway:
       default-filters:

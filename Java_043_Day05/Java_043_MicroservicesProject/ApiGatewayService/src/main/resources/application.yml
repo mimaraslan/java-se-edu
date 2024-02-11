@@ -4,8 +4,6 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-#    compatibility-verifier:
-#      enabled: false
   config:
     import: "configserver:"
   application:
@@ -14,4 +12,4 @@ spring:
 management:
   tracing:
     sampling:
-      probability: 1.0
+      probability: 1
