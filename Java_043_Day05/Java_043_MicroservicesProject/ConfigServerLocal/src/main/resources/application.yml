@@ -7,6 +7,18 @@ spring:
     base-url: http://localhost:9411
     service:
       name: config-server-local
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1.0
+        #  management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include: "*"
+#    endpoint:
+#      health:
+#        show-details: ALWAYS
   profiles:
     active: native
   cloud:
@@ -14,5 +26,6 @@ spring:
       server:
         native:
           search-locations: classpath:/config-repo
-    compatibility-verifier:
-      enabled: false
+#    compatibility-verifier:
+#      enabled: false
+

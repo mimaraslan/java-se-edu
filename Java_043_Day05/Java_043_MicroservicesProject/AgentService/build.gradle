@@ -5,4 +5,11 @@ dependencies {
     implementation libs.lombok
     implementation libs.swaggerApi
     implementation libs.jwt
+    implementation libs.springCloudConfigClient
+
+    implementation libs.observation
+    implementation libs.bridgeBrave
+    implementation libs.reporterBrave
+    testImplementation  libs.feignMicrometer
+
 }

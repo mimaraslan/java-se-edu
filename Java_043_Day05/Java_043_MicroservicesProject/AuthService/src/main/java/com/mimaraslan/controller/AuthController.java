@@ -76,7 +76,7 @@ public class AuthController {
         return ResponseEntity.ok(authService.findAll());
     }
 */
-
+    //    http://localhost:9090/auth/getall
     @GetMapping(EndPoint.GETALL)
     public ResponseEntity<  List <Auth>  > findAll(@RequestParam String token)   {
         return ResponseEntity.ok(authService.findAll(token));

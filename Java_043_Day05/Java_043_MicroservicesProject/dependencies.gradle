@@ -3,22 +3,22 @@ ext {
      * Bağımlılıkları versiyonlama işlemleri:
      */
     versions = [
-            springBoot             : "3.2.2",
-            springCloud            : "4.1.0",
-            lombok                 : "1.18.28",
-            mapStruct              : "1.5.5.Final",
-            postgreSql             : "42.7.1",
-            swaggerApi             : "2.3.0",
-            log4j                  : "2.20.0",
-            jwt                    : "4.4.0",
-            mySql                  : "8.3.0",
+            springBoot                  : "3.1.8",
+            springCloud                 : "4.0.0",
+            lombok                      : "1.18.28",
+            mapStruct                   : "1.5.5.Final",
+            postgreSql                  : "42.7.1",
+            swaggerApi                  : "2.3.0",
+            log4j                       : "2.20.0",
+            jwt                         : "4.4.0",
+            mySql                       : "8.3.0",
 
-            springCloudSleuthZipkin: "3.1.8"
+            springCloudCircuitBreaker   : "3.1.0",
+            springCloudSleuthZipkin     : "3.1.11",
+            springCloudCloudCommons     : "3.1.8"
+
 
     ]
-
-
-
 
     /**
      * Bu kısımda bağımlılık listesini oluştracağız. K:V
@@ -56,8 +56,27 @@ ext {
             springCloudStarterConfig        : "org.springframework.cloud:spring-cloud-starter-config:$versions.springCloud",
             springCloudGateway              : "org.springframework.cloud:spring-cloud-starter-gateway:$versions.springCloud",
 
-            springCloudSleuth               : "org.springframework.cloud:spring-cloud-starter-sleuth:$versions.springCloudSleuthZipkin",
-            springCloudSleuthZipkin         : "org.springframework.cloud:spring-cloud-sleuth-zipkin:$versions.springCloudSleuthZipkin"
+            springCloudCircuitBreaker            : "org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:$versions.springCloudCircuitBreaker",
+            springCloudCircuitBreakerReactor     : "org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j:$versions.springCloudCircuitBreaker",
+
+          //  springCloudSleuthZipkin              : "org.springframework.cloud:spring-cloud-sleuth-zipkin:$versions.springCloudSleuthZipkin",
+         //   springCloudSleuth                    : "org.springframework.cloud:spring-cloud-starter-sleuth:$versions.springCloudSleuthZipkin",
+            springCloudCommons                  : "org.springframework.cloud:spring-cloud-commons:4.0.5",
+            springBootWebMigrator               : "org.springframework.boot:spring-boot-properties-migrator:3.2.2",
+            springActuator: "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
+
+
+
+            observation: 'io.micrometer:micrometer-observation:1.12.2',
+                    bridgeBrave: 'io.micrometer:micrometer-tracing-bridge-brave:1.2.2',
+            reporterBrave: 'io.zipkin.reporter2:zipkin-reporter-brave:3.2.1',
+                    feignMicrometer: 'io.github.openfeign:feign-micrometer:13.2.1'
+
+
+
+
 
     ]
+
+
 }

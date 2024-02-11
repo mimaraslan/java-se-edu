@@ -2,10 +2,20 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-    compatibility-verifier:
-      enabled: false
+    circuitbreaker:
+      resilience4j:
+        enabled: true
   config:
     import: "configserver:"
   application:
     name:  user-profile-service-application
+  sleuth:
+    enabled: true
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    service:
+      name: config-server
+
+
 

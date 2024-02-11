@@ -2,8 +2,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-    compatibility-verifier:
-      enabled: false
+#    compatibility-verifier:
+#      enabled: false
   config:
     import: "configserver:"
   application:

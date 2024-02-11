@@ -4,4 +4,5 @@ dependencies {
     implementation libs.lombok
     implementation libs.swaggerApi
     implementation libs.jwt
+    implementation libs.springCloudConfigClient
 }

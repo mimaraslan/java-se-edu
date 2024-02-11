@@ -48,6 +48,8 @@ spring:
     base-url: http://localhost:9411
     service:
       name: agent-service
+    sender:
+      type: web
   datasource:
     url: jdbc:mysql://localhost:3306/micro_agentservicedb   # MySQL veritabanı URL'si
     username: root                                    # Veritabanı kullanıcı adı
