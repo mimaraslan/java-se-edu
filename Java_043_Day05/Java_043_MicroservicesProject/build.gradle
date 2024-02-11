@@ -17,12 +17,12 @@ allprojects {
     /**
      * tüm projelere(root+sub) pluginleri atamak için:
      */
-    apply from  :  "${rootDir}/dependencies.gradle"
+    apply from: "${rootDir}/dependencies.gradle"
     apply plugin: 'application'
     group = 'com.mimaraslan'
     version = 'v.1.0.0'
     sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility=JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 subprojects {
@@ -72,35 +72,29 @@ allprojects {
         annotationProcessor libs.mapStructProcessor
         implementation libs.swaggerApi
         implementation libs.postgreSql
-        implementation  libs.log4jApi
-        implementation  libs.log4jCore
-        implementation  libs.log4jSlf4jImpl
-        implementation  libs.jwt
+        implementation libs.log4jApi
+        implementation libs.log4jCore
+        implementation libs.log4jSlf4jImpl
+        implementation libs.jwt
 
         implementation libs.springCloudOpenFeign
         implementation libs.springCloudConfigClient
 
 
-
-  //      implementation libs.springCloudSleuthZipkin
-   //     implementation libs.springCloudSleuth
-   //     implementation libs.springCloudCommons
-  //      implementation libs.springBootWebMigrator
+        //     implementation libs.springCloudSleuthZipkin
+        //     implementation libs.springCloudSleuth
+        //     implementation libs.springCloudCommons
+        //     implementation libs.springBootWebMigrator
         implementation libs.springActuator
-   //     implementation libs.reporterBrave
+        //     implementation libs.reporterBrave
         implementation libs.observation
         implementation libs.bridgeBrave
         implementation libs.reporterBrave
-     //   testImplementation  libs.feignMicrometer
+        //   testImplementation  libs.feignMicrometer
         implementation libs.validation
-
-
-
-
 
     }
 }
-
 
 
 configurations {
