@@ -1,21 +1,62 @@
-# Getting Started
+# DevOps
 
-### Reference Documentation
+### Docker
 
-For further reference, please consider the following sections:
+docker build --build-arg JAR_FILE=target/java_044_devops_hello-1.0.3.jar  --tag mimaraslan/java_044_devops_hello:v003 .
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.2.2/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.2.2/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.2.2/reference/htmlsingle/index.html#web)
-* [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/3.2.2/reference/htmlsingle/index.html#actuator)
+docker build --build-arg JAR_FILE=target/java_044_devops_hello-1.0.3.jar  --tag mimaraslan/java_044_devops_hello:latest .
 
-### Guides
 
-The following guides illustrate how to use some features concretely:
+DIŞ_PORT : İÇ_PORT
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
+docker run -d -p 8081:8080 mimaraslan/java_044_devops_hello:v001
 
+docker run -d -p 8081:8080 mimaraslan/java_044_devops_hello:v002
+
+docker run -d -p 8081:8080 mimaraslan/java_044_devops_hello
+
+docker run -d -p 8081:8080 mimaraslan/java_044_devops_hello:latest
+
+
+http://localhost:8080/api/v1/hello
+http://localhost:8080/api/v1/metod2
+http://localhost:8080/api/v1/metod3
+
+
+docker pull mimaraslan/java_044_devops_hello:latest
+
+docker pull postgres
+
+docker run --name my-postgresdb -e POSTGRES_PASSWORD=123456789 -d postgres
+
+docker run --name my-postgresdb -e POSTGRES_PASSWORD=123456789 -d -p 9999:5432 postgres
+
+
+
+#### Kubernetes
+
+#### DockerHub'dan Docker'a image'i container olarak çekip çalıştırmak.
+
+docker run -d -p 8081:8080 mimaraslan/java_044_devops_hello:latest
+
+
+
+kubectl get nodes
+
+#### DockerHub'dan Kubenetes'teki Pod'a image'i container olarak çekip çalıştırmak.
+
+kubectl run mypod1 --image=mimaraslan/java_044_devops_hello:latest
+kubectl run mypod2 --image=mimaraslan/java_044_devops_hello:latest
+kubectl run mypod3 --image=mimaraslan/java_044_devops_hello:latest
+kubectl run mypod4 --image=mimaraslan/java_044_devops_hello:latest
+
+kubectl run hello-service --image=ebrucinarr/docker_hello:v001
+kubectl run agent-service --image=ebrucinarr/docker_hello:v001
+
+kubectl get pods
+
+
+
+docker run --name my-postgresdb -e POSTGRES_PASSWORD=123456789 -d -p 9999:5432 postgres
+
+kubectl run postgres --image=postgres --env="POSTGRES_PASSWORD=123456789"
