@@ -1,0 +1,11 @@
+rootProject.name = 'Java_043_MicroservicesProject'
+include 'AuthService'
+include 'UserProfileService'
+include 'BuyerService'
+include 'SellerService'
+include 'AgentService'
+include 'PropertyService'
+include 'ConfigServerLocal'
+include 'ConfigServerRemote'
+include 'ApiGatewayService'
+

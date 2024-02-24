@@ -1,9 +1,9 @@
 package com.mimaraslan.service;
 
-
 import com.mimaraslan.dto.request.UserProfileSaveRequestDto;
 import com.mimaraslan.mapper.IUserProfileMapper;
 import com.mimaraslan.model.UserProfile;
+import com.mimaraslan.rabbitmq.consumer.CreateUserConsumer;
 import com.mimaraslan.repository.IUserProfileRepository;
 import com.mimaraslan.utils.ServiceManager;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,9 @@ public class UserProfileService extends ServiceManager<UserProfile, Long> {
 
     private final IUserProfileRepository repository;
 
-    public UserProfileService(IUserProfileRepository repository) {
+   // private final CreateUserConsumer createUserConsumer;
+
+    public UserProfileService(IUserProfileRepository repository, CreateUserConsumer createUserConsumer) {
         super(repository);
         this.repository = repository;
     }
@@ -46,7 +48,7 @@ public class UserProfileService extends ServiceManager<UserProfile, Long> {
                 .build());
         */
 
-        save(IUserProfileMapper.INSTANCE.toUserProfile(dto));
+     //   save(IUserProfileMapper.INSTANCE.toUserProfile(dto));
         return true;
     }
 

@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+  config:
+    import: "configserver:"
+  application:
+    name:  auth-service-application
+
+management:
+  tracing:
+    sampling:
+      probability: 1

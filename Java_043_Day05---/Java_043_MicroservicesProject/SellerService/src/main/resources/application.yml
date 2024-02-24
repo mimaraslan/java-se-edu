@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+#    compatibility-verifier:
+#      enabled: false
+  config:
+    import: "configserver:"
+  application:
+    name:  seller-service-application
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

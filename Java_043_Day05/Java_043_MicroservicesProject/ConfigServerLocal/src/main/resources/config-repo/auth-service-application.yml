@@ -4,6 +4,11 @@ server:
 
 ##### database #####
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: user
   zipkin:
     enabled: true
     base-url: http://localhost:9411/
@@ -13,7 +18,7 @@ spring:
       type: web
   sleuth:
     sampler:
-      probability: 1
+      probability: 1.0
   datasource:
     url: jdbc:${AUTH_DB_PROTOCOL}://${AUTH_DB_IP}:${AUTH_DB_PORT}/${AUTH_DB_NAME}   # Veritabanı URL'si
     username: ${AUTH_DB_USERNAME}                                    # Veritabanı kullanıcı adı

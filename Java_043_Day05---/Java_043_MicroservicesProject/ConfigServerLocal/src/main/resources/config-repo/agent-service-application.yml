@@ -1,0 +1,81 @@
+###### port #####
+#server:
+#  port: ${AGENT_SERVER_PORT}
+#
+###### data postgresql #####
+#spring:
+#  datasource:
+#    url: jdbc:${AGENT_DB_PROTOCOL}://${AGENT_DB_IP}:${AGENT_DB_PORT}/${AGENT_DB_NAME}   # PostgreSQL veritabanı URL'si
+#    username: ${AGENT_DB_USERNAME}                                    # Veritabanı kullanıcı adı
+#    password: ${AGENT_DB_PASSWORD}                                 # Veritabanı şifresi
+#    driver-class-name: ${AGENT_DB_DRIVER}            # PostgreSQL JDBC sürücüsü
+#  jpa:
+#    hibernate:
+#      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
+#    show-sql: true
+#
+###### swagger-ui path #####
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#
+#
+###### 1000L * 60 * 5 minutes
+#auth-service:
+#  secret:
+#    key: ${AGENT_SECRET_KEY}
+#  issuer: ${AGENT_ISSUER}
+#  expire:
+#    date: 300000
+
+
+
+
+
+
+
+
+
+
+##### port #####
+server:
+  port: 9092
+
+##### database #####
+spring:
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    service:
+      name: agent-service
+    sender:
+      type: web
+  datasource:
+    url: jdbc:mysql://localhost:3306/micro_agentservicedb   # MySQL veritabanı URL'si
+    username: root                                    # Veritabanı kullanıcı adı
+    password: 123456789                                  # Veritabanı şifresi
+    driver-class-name: com.mysql.cj.jdbc.Driver            # MySQL JDBC sürücüsü
+
+
+  #    url: jdbc:postgresql://localhost:5432/Micro_AgentServiceDB   # PostgreSQL veritabanı URL'si
+  #    username: postgres                                    # Veritabanı kullanıcı adı
+  #    password: 123456789                                  # Veritabanı şifresi
+  #    driver-class-name: org.postgresql.Driver             # PostgreSQL JDBC sürücüsü
+  jpa:
+    hibernate:
+      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
+    show-sql: true
+
+##### swagger-ui path #####
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+#####  minutes ## 1000L * 60 * 5
+auth-service:
+  secret:
+    key: Istanbul34
+  issuer: Ankara06
+  expire:
+    date: 300000

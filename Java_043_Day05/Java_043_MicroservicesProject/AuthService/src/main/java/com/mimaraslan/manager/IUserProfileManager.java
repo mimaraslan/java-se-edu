@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * burada kullanacağımız url: istek atacağımız sınıfın RequestMapping adresi olmalıdır.
  */
 @FeignClient(name = "user-profile-manager",
-        url="http://localhost:9091/user" )
+        url="http://127.0.0.1:9091/user" )
 public interface IUserProfileManager {
     @PostMapping("/save")
     ResponseEntity<Boolean> save (@RequestBody UserProfileSaveRequestDto dto);

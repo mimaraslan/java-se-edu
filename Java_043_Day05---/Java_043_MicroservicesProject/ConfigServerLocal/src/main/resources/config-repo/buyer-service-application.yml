@@ -1,0 +1,76 @@
+###### port #####
+#server:
+#  port: ${BUYER_SERVER_PORT}
+#
+###### data postgresql #####
+#spring:
+#  datasource:
+#    url: jdbc:${BUYER_DB_PROTOCOL}://${BUYER_DB_IP}:${BUYER_DB_PORT}/${BUYER_DB_NAME}   # PostgreSQL veritabanı URL'si
+#    username: ${BUYER_DB_USERNAME}                                    # Veritabanı kullanıcı adı
+#    password: ${BUYER_DB_PASSWORD}                                 # Veritabanı şifresi
+#    driver-class-name: ${BUYER_DB_DRIVER}            # PostgreSQL JDBC sürücüsü
+#  jpa:
+#    hibernate:
+#      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
+#    show-sql: true
+#
+###### swagger-ui path #####
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#
+#
+###### Time minutes
+#auth-service:
+#  secret:
+#    key: ${BUYER_SECRET_KEY}
+#  issuer: ${BUYER_ISSUER}
+#  expire:
+#    date: 300000
+
+
+
+
+
+
+
+
+
+
+
+##### port #####
+server:
+  port: 9093
+
+##### data postgresql #####
+spring:
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    service:
+      name: buyer-service
+    sender:
+      type: web
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Micro_BuyerServiceDB   # PostgreSQL veritabanı URL'si
+    username: postgres                                    # Veritabanı kullanıcı adı
+    password: 123456789                                  # Veritabanı şifresi
+    driver-class-name: org.postgresql.Driver             # PostgreSQL JDBC sürücüsü
+  jpa:
+    hibernate:
+      ddl-auto: update                                 # Veritabanı şemasının otomatik güncellenmesi
+    show-sql: true
+
+##### swagger-ui path #####
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+##### 1000L * 60 * 5 minutes
+auth-service:
+  secret:
+    key: Istanbul34
+  issuer: Ankara06
+  expire:
+    date: 300000

@@ -2,11 +2,6 @@ server:
   port: 8888
 
 spring:
-  zipkin:
-    enabled: true
-    base-url: http://localhost:9411
-    service:
-      name: config-server-remote
   cloud:
     config:
       server:

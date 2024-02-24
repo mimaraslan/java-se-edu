@@ -1,0 +1,12 @@
+dependencies {
+    implementation libs.postgreSql
+    implementation libs.springBootDataJpa
+    implementation libs.lombok
+    implementation libs.swaggerApi
+    implementation libs.jwt
+
+    implementation libs.observation
+    implementation libs.bridgeBrave
+    implementation libs.reporterBrave
+    implementation libs.springActuator
+}

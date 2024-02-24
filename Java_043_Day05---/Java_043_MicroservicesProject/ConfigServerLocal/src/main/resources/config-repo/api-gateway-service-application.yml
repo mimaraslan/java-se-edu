@@ -1,0 +1,70 @@
+server:
+  port: 80
+
+spring:
+#  zipkin:
+#    enabled: true
+#    base-url: http://localhost:9411
+#    service:
+#      name: api-gateway-service
+#    sender:
+#      type: web
+  cloud:
+    gateway:
+      default-filters:
+        - RewritePath=/(?<segment>.*),/$\{segment}
+      routes:
+        - id: auth-service
+          uri: http://localhost:9090
+          predicates:
+            - Path=/auth/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: auth
+                fallbackUri: forward:/fallback/auth
+        - id: user-profile-service
+          uri: http://localhost:9091
+          predicates:
+            - Path=/user/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: user
+                fallbackUri: forward:/fallback/user
+        - id: agent-service
+          uri: http://localhost:9092
+          predicates:
+            - Path=/agent/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: agent
+                fallbackUri: forward:/fallback/agent
+        - id: buyer-service
+          uri: http://localhost:9093
+          predicates:
+            - Path=/buyer/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: buyer
+                fallbackUri: forward:/fallback/buyer
+        - id: property-service
+          uri: http://localhost:9094
+          predicates:
+            - Path=/property/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: property
+                fallbackUri: forward:/fallback/property
+        - id: seller-service
+          uri: http://localhost:9095
+          predicates:
+            - Path=/seller/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: seller
+                fallbackUri: forward:/fallback/seller

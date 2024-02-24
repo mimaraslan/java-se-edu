@@ -2,16 +2,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-    circuitbreaker:
-      resilience4j:
-        enabled: true
   config:
     import: "configserver:"
   application:
     name:  user-profile-service-application
 
-management:
-  tracing:
-    sampling:
-      probability: 1
 

@@ -9,6 +9,8 @@ import com.mimaraslan.exception.ErrorType;
 import com.mimaraslan.manager.IUserProfileManager;
 import com.mimaraslan.mapper.IAuthMapper;
 import com.mimaraslan.model.Auth;
+import com.mimaraslan.rabbitmq.model.AuthSaveModel;
+import com.mimaraslan.rabbitmq.producer.CreateUserProducer;
 import com.mimaraslan.repository.IAuthRepository;
 import com.mimaraslan.utils.JwtTokenManager;
 import com.mimaraslan.utils.ServiceManager;
@@ -31,13 +33,17 @@ public class AuthService extends ServiceManager<Auth, Long> {
     private final IUserProfileManager userProfileManager;
 
 
+    private final CreateUserProducer createUserProducer;
+
     public AuthService(IAuthRepository repository,
                        JwtTokenManager jwtTokenManager,
-                       IUserProfileManager userProfileManager) {
+                       IUserProfileManager userProfileManager,
+                       CreateUserProducer createUserProducer) {
         super(repository);
         this.repository = repository;
         this.jwtTokenManager = jwtTokenManager;
         this.userProfileManager = userProfileManager;
+        this.createUserProducer = createUserProducer;
     }
 
 
@@ -112,7 +118,15 @@ public class AuthService extends ServiceManager<Auth, Long> {
                 .build());
 */
         // Baska bir servisi mapper ile cagiriyoruz.
-        userProfileManager.save(IAuthMapper.INSTANCE.toDto(auth));
+        // userProfileManager.save(IAuthMapper.INSTANCE.toDto(auth));
+
+        // RabbitMQ oraya gönderilecek.
+        createUserProducer.convertAndSend(AuthSaveModel.builder()
+                .authId(auth.getId())
+                .username(auth.getUsername())
+                .email(auth.getEmail())
+                .build());
+
 
         System.out.println("auth: " +  auth);
 

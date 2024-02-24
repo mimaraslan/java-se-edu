@@ -21,6 +21,7 @@ public class FallbackController {
         return ResponseEntity.ok("UserProfile Service: Şu anda geçici olarak hizmet verememekteyiz.");
     }
 
+
     // http://localhost:9092/fallback/agent
     @GetMapping("/agent")
     public  ResponseEntity<String>  fallbackAgent() {

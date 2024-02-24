@@ -46,16 +46,21 @@ server:
 
 ##### data postgresql #####
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: user
   zipkin:
     enabled: true
     base-url: http://localhost:9411/
     service:
-      name: user-profile-service
+      name: user-service
     sender:
       type: web
   sleuth:
     sampler:
-      probability: 1
+      probability: 1.0
   datasource:
     url: jdbc:postgresql://localhost:5432/Micro_UserProfileServiceDB   # PostgreSQL veritabanı URL'si
     username: postgres                                    # Veritabanı kullanıcı adı
@@ -79,3 +84,4 @@ auth-service:
   issuer: Ankara06
   expire:
     date: 300000
+

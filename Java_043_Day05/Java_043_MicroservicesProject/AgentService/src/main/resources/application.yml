@@ -11,4 +11,3 @@ management:
   tracing:
     sampling:
       probability: 1
-

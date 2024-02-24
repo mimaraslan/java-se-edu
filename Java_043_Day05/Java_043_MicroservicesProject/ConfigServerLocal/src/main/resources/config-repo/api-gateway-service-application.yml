@@ -2,13 +2,21 @@ server:
   port: 80
 
 spring:
-#  zipkin:
-#    enabled: true
-#    base-url: http://localhost:9411
-#    service:
-#      name: api-gateway-service
-#    sender:
-#      type: web
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: user
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411/
+    service:
+      name: api-gateway-service
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1.0
   cloud:
     gateway:
       default-filters:
