@@ -3,4 +3,8 @@ dependencies {
 
     implementation libs.springCloudCircuitBreaker
     implementation libs.springCloudCircuitBreakerReactor
+
+    implementation libs.bridgeBrave
+    implementation libs.reporterBrave
+    implementation libs.observation
 }

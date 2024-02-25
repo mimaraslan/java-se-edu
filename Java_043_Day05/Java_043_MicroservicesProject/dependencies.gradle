@@ -11,11 +11,10 @@ ext {
             swaggerApi          : "2.3.0",
             log4j               : "2.20.0",
             jwt                 : "4.4.0",
-            mySql               : "8.3.0"
+            mySql               : "8.3.0",
+
+            springCloudCircuitBreaker: "3.0.0"
    ]
-
-
-
 
     /**
      * Bu kısımda bağımlılık listesini oluştracağız. K:V

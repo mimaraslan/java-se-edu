@@ -1,4 +1,8 @@
 dependencies {
     implementation libs.springCloudConfigServer
     implementation libs.springCloudStarterConfig
+
+    implementation libs.bridgeBrave
+    implementation libs.reporterBrave
+    implementation libs.observation
 }
