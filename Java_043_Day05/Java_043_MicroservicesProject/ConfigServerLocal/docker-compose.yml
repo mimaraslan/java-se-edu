@@ -1,0 +1,8 @@
+services:
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: my-zipkin
+    environment:
+      - STORAGE_TYPE=mem
+    ports:
+      - 9411:9411

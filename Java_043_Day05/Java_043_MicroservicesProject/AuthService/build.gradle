@@ -5,6 +5,10 @@ dependencies {
     implementation libs.swaggerApi
     implementation libs.jwt
 
+    implementation libs.bridgeBrave
+    implementation libs.reporterBrave
+    implementation libs.observation
+
     implementation libs.springBootAmqp
 
 }

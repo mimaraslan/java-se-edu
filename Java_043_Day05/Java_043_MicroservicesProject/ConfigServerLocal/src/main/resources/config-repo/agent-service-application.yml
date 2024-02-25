@@ -41,11 +41,10 @@
 server:
   port: 9092
 
-##### database #####
 spring:
   zipkin:
     enabled: true
-    base-url: http://localhost:9411/
+    base-url: http://localhost:9411
     service:
       name: agent-service
     sender:

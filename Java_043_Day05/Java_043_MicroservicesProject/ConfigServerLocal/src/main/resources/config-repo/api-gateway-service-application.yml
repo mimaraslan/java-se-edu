@@ -16,7 +16,7 @@ spring:
       type: web
   sleuth:
     sampler:
-      probability: 1.0
+      probability: 1
   cloud:
     gateway:
       default-filters:

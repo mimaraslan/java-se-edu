@@ -2,6 +2,16 @@ server:
   port: 8888
 
 spring:
+#  zipkin:
+#    enabled: true
+#    base-url: http://localhost:9411/
+#    service:
+#      name: config-server-local
+#    sender:
+#      type: web
+#  sleuth:
+#    sampler:
+#      probability: 1.0
   profiles:
     active: native
   cloud:
@@ -10,7 +20,7 @@ spring:
         native:
           search-locations: classpath:/config-repo
 
-management:
-  tracing:
-    sampling:
-      probability: 1
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0
