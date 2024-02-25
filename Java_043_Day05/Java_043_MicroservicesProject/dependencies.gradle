@@ -59,12 +59,11 @@ ext {
             springCloudCircuitBreaker        : "org.springframework.cloud:spring-cloud-circuitbreaker-resilience4j:$versions.springCloudCircuitBreaker",
             springCloudCircuitBreakerReactor : "org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j:$versions.springCloudCircuitBreaker",
 
-
             springBootActuator               : "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
 
             springBootValidation             : "org.springframework.boot:spring-boot-starter-validation:$versions.springBoot",
 
-            //Zipkin
+            //Zipkin for Spring Boot 3.x.y
             bridgeBrave                     : "io.micrometer:micrometer-tracing-bridge-brave",
             reporterBrave                   : "io.zipkin.reporter2:zipkin-reporter-brave",
             observation                     : "io.micrometer:micrometer-observation",

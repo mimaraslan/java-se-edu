@@ -120,7 +120,7 @@ public class AuthService extends ServiceManager<Auth, Long> {
         // Baska bir servisi mapper ile cagiriyoruz.
         // userProfileManager.save(IAuthMapper.INSTANCE.toDto(auth));
 
-        // RabbitMQ oraya gönderilecek.
+        // Bilgi RabbitMQ'ya gönderiliyor.
         createUserProducer.convertAndSend(AuthSaveModel.builder()
                 .authId(auth.getId())
                 .username(auth.getUsername())

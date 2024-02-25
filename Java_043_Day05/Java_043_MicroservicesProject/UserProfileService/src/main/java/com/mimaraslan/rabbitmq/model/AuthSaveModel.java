@@ -12,9 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor // bos paramereli hazirlayici yapici metodu olusturur
 @AllArgsConstructor // dolu paramereli hazirlayici yapici metodu olusturur
 public class AuthSaveModel implements Serializable {
-
         Long authId;
         String username;
         String email;
-
 }

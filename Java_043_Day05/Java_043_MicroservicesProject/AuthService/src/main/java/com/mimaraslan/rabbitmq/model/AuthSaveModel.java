@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * Mutlaka modeller serileştirilmelidir.
+ * Paket ismi de dahil bu sınıfın aynısı iletilen serviste de olmalıdır.
+ */
 @Builder // bir siniftan nesne turetmek icin
 @Data // set get metotlarini otomatik tanimlar
 @NoArgsConstructor // bos paramereli hazirlayici yapici metodu olusturur
