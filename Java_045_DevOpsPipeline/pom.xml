@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.mimaraslan</groupId>
     <artifactId>Java_045_DevOpsPipeline</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Java_045_DevOpsPipeline</name>
     <description>Java_045_DevOpsPipeline</description>
     <properties>
@@ -40,6 +40,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+       <finalName>devops-application</finalName>
     </build>
 
 </project>

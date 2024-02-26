@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-devops-application-deployment
+spec:
+  selector:
+    matchLabels:
+      app: my-devops-application
+  template:
+    metadata:
+      labels:
+        app: my-devops-application
+    spec:
+      containers:
+      - name: my-devops-application
+        image: mimaraslan/devops-application:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: ser
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-devops-application-service
+spec:
+  selector:
+    app: my-devops-application
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: NodePort
+
