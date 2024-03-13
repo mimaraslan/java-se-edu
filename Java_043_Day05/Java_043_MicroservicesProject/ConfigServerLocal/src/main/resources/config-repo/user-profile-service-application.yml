@@ -44,7 +44,6 @@
 server:
   port: 9091
 
-##### data postgresql #####
 spring:
   rabbitmq:
     host: localhost

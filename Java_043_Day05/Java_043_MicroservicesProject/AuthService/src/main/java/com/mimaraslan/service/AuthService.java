@@ -23,15 +23,12 @@ import java.util.Optional;
 
 @Service
 public class AuthService extends ServiceManager<Auth, Long> {
-
     // @Autowired
     private final IAuthRepository repository;
 
     private final JwtTokenManager jwtTokenManager;
 
-
     private final IUserProfileManager userProfileManager;
-
 
     private final CreateUserProducer createUserProducer;
 
@@ -72,15 +69,10 @@ public class AuthService extends ServiceManager<Auth, Long> {
 
 
     public DoRegisterResponseDto doRegister(DoRegisterRequestDto dto) {
-
         System.out.println("DoRegisterRequestDto: " +  dto);
-
-
         // parola kontrolleri yapiliyor
         if (!dto.getPassword().equals(dto.getRePassword()))
             throw new AuthServiceException(ErrorType.REGISTER_PASSWORD_MISMATCH);
-
-
         /*
         Auth auth = new Auth();
         auth.setUsername(dto.getUsername());
@@ -90,7 +82,6 @@ public class AuthService extends ServiceManager<Auth, Long> {
         auth.setState(true);
         save(auth); // KAYIT
         */
-
        /*
         // builder ile nesne - lombok ile nesne
         Auth auth = save(Auth.builder()
@@ -101,15 +92,11 @@ public class AuthService extends ServiceManager<Auth, Long> {
                 .state(true)
                 .build());
         */
-
         Auth auth = IAuthMapper.INSTANCE.toAuth(dto);
-
        // auth.setCreateAt(System.currentTimeMillis());
        // auth.setState(true);
         auth.setAddress("Dünya");
         save(auth); // KAYIT
-
-
 /*        // Baska bir servisi cagiriyoruz
         userProfileManager.save(UserProfileSaveRequestDto.builder()
                 .authId(auth.getId())
@@ -126,7 +113,6 @@ public class AuthService extends ServiceManager<Auth, Long> {
                 .username(auth.getUsername())
                 .email(auth.getEmail())
                 .build());
-
 
         System.out.println("auth: " +  auth);
 
@@ -187,7 +173,5 @@ public class AuthService extends ServiceManager<Auth, Long> {
 
         return repository.findAll();
     }
-
-
 
 }
